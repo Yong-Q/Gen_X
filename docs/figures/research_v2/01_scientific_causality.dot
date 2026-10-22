@@ -1,0 +1,43 @@
+// Editable methodology diagram. STATUS = PROPOSED RESEARCH, NOT SCIENTIFIC RESULTS.
+// SiO2 and bulk modulus are candidate choices, not completed or approved experiments.
+digraph ScientificCausality {
+  graph [rankdir=TB, bgcolor="white", fontname="Noto Sans CJK SC", fontsize=15,
+    label="A  科学问题：从制备集合到独立响应", labelloc=t,
+    pad=0.12, nodesep=0.18, ranksep=0.24, size="6.69,9.35"];
+  node [shape=box, style="rounded,filled", fillcolor="#F1F5F9", color="#718399",
+    fontname="Noto Sans CJK SC", fontsize=12, margin="0.11,0.07", penwidth=1.1];
+  edge [color="#4D6277", arrowsize=0.65, fontname="Noto Sans CJK SC", fontsize=12];
+  input [label="输入：组成、周期盒、状态条件\n候选材料：非晶 SiO₂", fillcolor="#E6F1FA"];
+  protocol [label="制备协议：熔融—淬火—老化\n冷却速率、温度、压力、随机种子"];
+  hamiltonian [label="参考哈密顿量 H／势函数\n核验单位、能量／力／应力误差"];
+  ensemble [label="非平衡集合 p(x | 制备历史, H, N)\n不自动等同平衡 Boltzmann 分布", fillcolor="#DCEEE8"];
+  local [label="短程网络\n配位、键长、角度、缺陷"];
+  medium [label="中程网络\n环、关联长度、结构因子 S(q)"];
+  response [label="响应：能量—体积曲线／体积模量\n统一测量协议；因果尚待检验", fillcolor="#DCEEE8"];
+  small [label="小盒高保真：精度可核验\n独立样本昂贵；尺度受限", fillcolor="#FFF1DB"];
+  large [label="大盒经典：长尺度统计较充分\n势偏差可能传递至生成分布", fillcolor="#FFF1DB"];
+  gap [label="待解缺口：精度 × 尺度 × 数据效率\n同一制备协议下能否跨参考势迁移？", fillcolor="#FBE7E7"];
+  bridge [label="候选桥梁：条件生成器\n经典集合预训练 → 少量目标集合微调\n生成独立种子的大周期盒", fillcolor="#E7E3F7"];
+  hypothesis [label="联合假设 H₁ / H₂：同数据／处理预算\n迁移收益跨留出尺寸保持"];
+  structure [label="检验 1：短程＋中程结构\n区间、缺陷率、敏感性"];
+  property [label="检验 2：独立性质\n留出轨迹＋独立核验点"];
+  costs [label="检验 3：数据／成本收益\n简单基线＋学习曲线"];
+  decision [shape=diamond, label="三项证据是否\n支持 H₁ / H₂？", fillcolor="#FFF1DB"];
+  pass [label="是：进入更广条件验证\n输出适用范围与效应区间", fillcolor="#DCEEE8"];
+  fail [label="否：否定／收窄假设\n区分势误差、采样与生成失效", fillcolor="#FBE7E7"];
+  input -> protocol; input -> hamiltonian;
+  {rank=same; protocol; hamiltonian;}
+  protocol -> ensemble [label="定义历史"]; hamiltonian -> ensemble [label="定义动力学"];
+  ensemble -> local; ensemble -> medium; {rank=same; local; medium;}
+  local -> response; medium -> response;
+  response -> small [style=dashed, label="精度证据需求"];
+  response -> large [style=dashed, label="尺度证据需求"];
+  {rank=same; small; large;}
+  small -> gap; large -> gap;
+  gap -> bridge -> hypothesis;
+  hypothesis -> structure; hypothesis -> property; hypothesis -> costs;
+  {rank=same; structure; property; costs;}
+  structure -> decision; property -> decision; costs -> decision;
+  decision -> pass [label="是"]; decision -> fail [label="否"];
+  {rank=same; pass; fail;}
+}

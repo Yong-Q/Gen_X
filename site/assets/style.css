@@ -94,7 +94,9 @@ code, pre { font-family: "DejaVu Sans Mono", "Liberation Mono", Consolas, monosp
 .prose tbody tr:last-child td { border-bottom: 0; }
 .prose caption { padding: 10px; text-align: left; color: var(--muted); }
 .prose math { font-size: 1.08em; }
-.prose math[display="block"] { padding: 24px 16px; margin: 20px 0; background: #f0f5f8; border: 1px solid var(--line); border-radius: 5px; overflow-x: auto; }
+.math-scroll { max-width: 100%; overflow-x: auto; padding: 24px 16px; margin: 20px 0; background: #f0f5f8; border: 1px solid var(--line); border-radius: 5px; }
+.math-scroll:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+.prose math[display="block"] { padding: 0; margin: 0; }
 .prose img { max-width: 100%; height: auto; }
 .toc { position: sticky; top: 30px; font-size: 11px; line-height: 1.8; max-height: calc(100vh - 60px); overflow-y: auto; padding-left: 16px; border-left: 1px solid var(--line); }
 .toc summary { font-weight: 650; font-size: 12px; color: var(--navy); cursor: pointer; margin-bottom: 14px; }

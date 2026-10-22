@@ -11,6 +11,7 @@ import html
 from html.parser import HTMLParser
 import json
 import os
+import re
 from pathlib import Path
 import shutil
 import subprocess
@@ -23,11 +24,13 @@ PAGES = [
     ("README.md", "index.html", "项目概览", "从构型分布到结构系综", "目标、当前边界与阅读入口"),
     ("docs/tutorial.md", "tutorial.html", "使用教程", "从配置到结果", "启动、运行、检查与反馈"),
     ("docs/research_program.md", "research.html", "研究方案", "从工程示例到独立研究", "研究假设、对照实验与停止标准"),
+    ("docs/generative_theory.md", "theory.html", "数学推导", "从概率分布到生成与验证", "流、扩散、概率路径及非晶响应"),
     ("docs/real_generation_results.md", "generation.html", "生成示例", "单珠水冰：真实预训练采样", "独立示例、生成构型与复跑步骤"),
     ("docs/literature_survey.md", "literature.html", "文献调研", "已有方法与证据边界", "水、非晶与聚合物的分布学习"),
     ("docs/technical_roadmap.md", "roadmap.html", "技术路线", "从可运行到可验证", "模型选择、科学验收与两条反馈回环"),
     ("docs/potentials_and_environment.md", "environment.html", "势与环境", "参考势与运行前置条件", "复用权重、环境和适用范围"),
     ("docs/smoke_results.md", "evidence.html", "执行证据", "CPU 冒烟执行记录", "实际命令、作业、日志与验证边界"),
+    ("docs/documentation_patterns.md", "documentation.html", "文档案例", "可借鉴的科学与工程文档", "GitHub实例、项目技能与采用方式"),
 ]
 SOURCE_TO_PAGE = {(ROOT / p[0]).resolve(): p[1] for p in PAGES}
 
@@ -72,8 +75,22 @@ def convert(pandoc, source):
     walk_links(document, source)
     result = subprocess.run([pandoc, "--from=json", "--to=html5", "--mathml", "--no-highlight", "--wrap=none"],
                             input=json.dumps(document, ensure_ascii=False), check=True,
-                            stdout=subprocess.PIPE, encoding="utf-8")
-    return result.stdout
+                            stdout=subprocess.PIPE, stderr=subprocess.PIPE, encoding="utf-8")
+    if "Could not convert TeX math" in result.stderr:
+        raise RuntimeError("MathML conversion failed in " + str(source) + ":\n" + result.stderr)
+    # MathML tables retain an intrinsic width. An HTML region supplies a genuine
+    # scroll container so long derivations remain readable on a narrow screen.
+    # Pandoc 2.12's texmath emits unitless sizes for \big/\Big delimiters;
+    # Firefox requires an explicit length/percentage. A legacy unitless value
+    # is a multiplier of the reference glyph size, hence convert to percent.
+    output = re.sub(r'\b(minsize|maxsize)="([0-9]+(?:\.[0-9]+)?)"',
+                    lambda m: '{}="{:g}%"'.format(m[1], float(m[2]) * 100), result.stdout)
+    output = re.sub(r'<img src="([^"]*figures/research_v2/[^"]+\.svg)"([^>]*)>',
+                    r'<a class="diagram-link" href="\1" target="_blank" rel="noopener" aria-label="打开矢量流程图，可放大查看"><img src="\1"\2></a>',
+                    output)
+    return re.sub(r'<p>(<math display="block".*?</math>)</p>',
+                  r'<div class="math-scroll" role="region" tabindex="0" aria-label="公式，可横向滚动">\1</div>',
+                  output, flags=re.S)
 
 
 class Inspector(HTMLParser):
@@ -133,6 +150,8 @@ def pdf_panel():
                 if example.is_file(): group.append(example)
                 research=survey.parent/'research_program.pdf'
                 if research.is_file(): group.append(research)
+                patterns=survey.parent/'documentation_patterns.pdf'
+                if patterns.is_file(): group.append(patterns)
                 snapshots.append(group)
     paths = max(snapshots, key=lambda group: max(path.stat().st_mtime_ns for path in group)) if snapshots else []
     if paths:

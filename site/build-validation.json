@@ -1,21 +1,23 @@
 {
   "status": "passed",
-  "html_pages": 8,
-  "checked_local_links": 315,
-  "mathml_elements": 20,
+  "html_pages": 10,
+  "checked_local_links": 447,
+  "mathml_elements": 198,
   "external_runtime_assets": 0,
   "errors": [],
   "scope": "Static local target/fragment, duplicate ID, MathML and external asset checks; not a browser test",
   "sources_sha256": {
-    "README.md": "089924df606b7e40c21198cff3ac5432bfc0dfbb9c24b9c082c1542f56192faa",
+    "README.md": "850f58b3e072131d5b751cc1ea691918791c58a6cff540cdc8df9da070cfd512",
     "docs/tutorial.md": "2b890ee568612f381fe61e9eb317600c54de2743d9ed12be8b540590bf497515",
-    "docs/research_program.md": "d8d396ced9f60df5e9c9c2b2cbffcb3204529c2e93a1e0ed5eadd3dc32e5b046",
+    "docs/research_program.md": "4c49ae989c26de7e7d9900f9ee89aeff594896035d5afbb947176d2e03c477a1",
+    "docs/generative_theory.md": "1b567262ffb249afa516c87306ade68fede7f07d4c8239621bf6ac6023747837",
     "docs/real_generation_results.md": "cab9971ff61eb1f14d62c2d3d2f31224fca57f358e41dd923670649ed2856935",
     "docs/literature_survey.md": "22605ae0e005fdd1b18c97aa263a799257a58bfc9ec37c88b2a4d038550f3fbb",
     "docs/technical_roadmap.md": "f673d26f3538855d9c9c3048ad05e5de7a829e7e8f420dd3ad9b9ebae0adc06b",
     "docs/potentials_and_environment.md": "2221ad5006c45486150f0737e59c15fb37b17a43849dce4af628fbe71ce04e9d",
-    "docs/smoke_results.md": "fc507ed775e06dc09f85856ed6e6b7f90425e19a4057cdff7344f2e8f74ed02f"
+    "docs/smoke_results.md": "fc507ed775e06dc09f85856ed6e6b7f90425e19a4057cdff7344f2e8f74ed02f",
+    "docs/documentation_patterns.md": "0167d04e9cba3b0dcbe523c0fe35c5c5159418d0daf5e56985c5ca08138aa2df"
   },
-  "built_utc": "2026-10-22T09:27:27.914778+00:00",
-  "builder_sha256": "c438fb64631db520cff27067dda080d2802fcf40abb5bacb1633fe4bc0240e19"
+  "built_utc": "2026-10-22T09:59:11.877125+00:00",
+  "builder_sha256": "23c512c94f2d9da1af9030568f5c7aad2267f26bb253010a4f6f8a9c9c80b6da"
 }

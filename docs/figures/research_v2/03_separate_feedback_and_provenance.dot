@@ -1,0 +1,50 @@
+// Editable methodology diagram. STATUS = PROPOSED RESEARCH, NOT SCIENTIFIC RESULTS.
+// Separate update triggers; final frozen test is never a source for training/selection.
+digraph FeedbackAndProvenance {
+  graph [rankdir=TB, bgcolor="white", fontname="Noto Sans CJK SC", fontsize=15,
+    label="C  两条反馈回环与最终独立裁决", labelloc=t,
+    pad=0.08, nodesep=0.16, ranksep=0.18, size="6.69,9.35", ratio=compress,
+    splines=polyline];
+  node [shape=box, style="rounded,filled", fillcolor="#F1F5F9", color="#718399",
+    fontname="Noto Sans CJK SC", fontsize=12, margin="0.08,0.05", penwidth=1.1];
+  edge [color="#4D6277", arrowsize=0.6, fontname="Noto Sans CJK SC", fontsize=12];
+  scope [label="输入：开发集诊断＋冻结验收协议\n最终测试不参与触发、选点或调阈值", fillcolor="#E6F1FA"];
+  gsignal [label="回环 1：生成器／分布\n触发：重复 QA 失败／统计缺口", fillcolor="#E7E3F7", group=g];
+  psignal [label="回环 2：势／主动学习\n触发：校准 OOD／独立 E,F,σ 误差\n选点须与随机同预算对照", fillcolor="#FFF1DB", group=p];
+  gcheck [shape=diamond, label="参考势已验收且\n参考采样充分？", fillcolor="#FFF1DB", group=g];
+  wait [label="否：先补独立证据\n生成失效本身不证明势失效", fillcolor="#FBE7E7", group=g];
+  pdft [label="独立 DFT 标注 E、F、σ\n统一设置；记录收敛与来源", group=p];
+  gref [label="是／证据补齐：独立参考采样\n匹配制备协议；多轨迹／种子\n随机补样为同预算对照", group=g];
+  pcheck [shape=diamond, label="新标签收敛且\n单位／一致性合格？", fillcolor="#FFF1DB", group=p];
+  gaudit [label="分组／去重／相关性审计\n只进训练／开发；测试不回收", group=g];
+  pinvalid [label="否：隔离无效标签并保留证据\n修正重算；禁止进入势训练", fillcolor="#FBE7E7", group=p];
+  gtrain [label="更新生成器 Gᵥ → Gᵥ₊₁\n开发集回归＋同预算消融", group=g];
+  pfit [label="是：更新 MLP Vᵥ → Vᵥ₊₁\n保留独立分组；记录标签版本", group=p];
+  gfreeze [label="冻结生成器候选版本\n保留裸样本、拒绝和后处理结果", fillcolor="#DCEEE8", group=g];
+  pvalidate [shape=diamond, label="完整势验收通过？\nE,F,σ／稳定性\n制备路径／响应", fillcolor="#FFF1DB", group=p];
+  paccept [label="是：冻结新势；复核参考集合\n新势须重新验证生成器迁移", fillcolor="#DCEEE8", group=p];
+  provenance [label="共享溯源：数据哈希／来源／分组／父版本\n势与生成器权重、DFT 设置、种子、拒绝、成本", fillcolor="#E6F1FA"];
+  adjudication [label="锁定候选 → 最终冻结测试独立裁决\n结构＋独立性质＋成本；测试永不回流", fillcolor="#DCEEE8"];
+  output [label="输出：可复查版本包＋GO／NO-GO＋失效边界\n测试后再开发须新周期与新最终留出"];
+  scope -> gsignal; scope -> psignal;
+  {rank=same; gsignal; psignal;}
+  gsignal -> gcheck; psignal -> pdft;
+  {rank=same; gcheck; pdft;}
+  gcheck -> wait [label="否"];
+  {rank=same; wait; pcheck;}
+  gcheck -> gref [label="是"]; wait -> gref [style=dashed]; pdft -> pcheck;
+  {rank=same; gref; pinvalid;}
+  gref -> gaudit; pcheck -> pinvalid [label="否"];
+  {rank=same; gaudit; pfit;}
+  gaudit -> gtrain; pcheck -> pfit [label="是"];
+  pinvalid -> pfit [style=invis];
+  {rank=same; gtrain; pvalidate;}
+  gtrain -> gfreeze; pfit -> pvalidate;
+  {rank=same; gfreeze; paccept;}
+  pvalidate -> paccept [label="是"];
+  gfreeze -> gsignal [style=dashed, constraint=false, label="开发仍有缺口"];
+  pinvalid -> pdft [style=dashed, constraint=false];
+  pvalidate -> psignal [style=dashed, constraint=false, label="否：诊断"];
+  gfreeze -> provenance; paccept -> provenance;
+  provenance -> adjudication -> output;
+}

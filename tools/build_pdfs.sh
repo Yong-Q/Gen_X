@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 repo_root=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)
+export GENX_PDF_REPO_ROOT="$repo_root"
 out_arg=${1:-"reports/$(date -u +%Y%m%dT%H%M%SZ)"}
 if [[ "$out_arg" = /* ]]; then
   printf 'Use an output path inside the repository.\n' >&2
@@ -29,11 +30,12 @@ cjk_dir=$(dirname -- "$cjk_regular")
 cjk_file=$(basename -- "$cjk_regular")
 cjk_bold_file=$(basename -- "$cjk_bold")
 common=(--from=markdown --pdf-engine=xelatex --standalone --toc
+  --resource-path="$repo_root/docs:$repo_root"
   --lua-filter="$repo_root/tools/pdf_links.lua" --include-in-header="$repo_root/tools/pdf_style.tex"
   -V 'documentclass=article' -V 'mainfont=DejaVu Sans' -V "CJKmainfont=$cjk_file"
   -V "CJKoptions=Path=$cjk_dir/,BoldFont=$cjk_bold_file,Scale=1"
   -V 'geometry:margin=20mm' -V 'fontsize=10pt' -V 'colorlinks=true' -V 'urlcolor=blue'
-  -V 'linestretch=1.12' -V 'papersize=a4' -M 'date=2026-10-22')
+  -V 'linestretch=1.12' -V 'papersize=a4' -M 'date=2026-10-22' -M 'toc-title=目录')
 pandoc "$repo_root/docs/literature_survey.md" "$repo_root/docs/potentials_and_environment.md" \
   "${common[@]}" -M 'title=构型概率分布的学习与生成：文献调研' \
   -o "$out_dir/literature_survey.pdf" >"$out_dir/literature_build.log" 2>&1
@@ -46,8 +48,17 @@ if [[ -f "$repo_root/docs/real_generation_results.md" ]]; then
     -o "$out_dir/bgmat_cpu_generation.pdf" >"$out_dir/generation_build.log" 2>&1
 fi
 if [[ -f "$repo_root/docs/research_program.md" ]]; then
-  pandoc "$repo_root/docs/research_program.md" "${common[@]}" \
-    -M 'title=Gen_X研究方案：非晶构型的概率分布迁移' \
+  research_sources=("$repo_root/docs/research_program.md")
+  if [[ -f "$repo_root/docs/generative_theory.md" ]]; then
+    research_sources+=("$repo_root/docs/generative_theory.md")
+  fi
+  pandoc "${research_sources[@]}" "${common[@]}" \
+    -M 'title=Gen_X研究方案：科学意义、生成理论与验证路线' \
     -o "$out_dir/research_program.pdf" >"$out_dir/research_build.log" 2>&1
 fi
-printf '%s\n' "$out_dir/literature_survey.pdf" "$out_dir/technical_roadmap.pdf"
+if [[ -f "$repo_root/docs/documentation_patterns.md" ]]; then
+  pandoc "$repo_root/docs/documentation_patterns.md" "${common[@]}" \
+    -M 'title=Gen_X：GitHub科研文档案例与技能采用方案' \
+    -o "$out_dir/documentation_patterns.pdf" >"$out_dir/documentation_build.log" 2>&1
+fi
+printf '%s\n' "$out_dir"/*.pdf

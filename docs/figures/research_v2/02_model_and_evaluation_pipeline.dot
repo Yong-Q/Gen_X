@@ -1,0 +1,51 @@
+// Editable methodology diagram. STATUS = PROPOSED RESEARCH, NOT SCIENTIFIC RESULTS.
+// This project has not trained its own generator; all model steps below are proposed.
+digraph ModelPipeline {
+  graph [rankdir=TB, bgcolor="white", fontname="Noto Sans CJK SC", fontsize=15,
+    label="B  数据 → 模型 → 采样 → 联合验收", labelloc=t,
+    pad=0.08, nodesep=0.16, ranksep=0.16, size="6.69,9.35", ratio=compress];
+  node [shape=box, style="rounded,filled", fillcolor="#F1F5F9", color="#718399",
+    fontname="Noto Sans CJK SC", fontsize=12, margin="0.08,0.04", penwidth=1.1];
+  edge [color="#4D6277", arrowsize=0.6, fontname="Noto Sans CJK SC", fontsize=12];
+  classical [label="输入 A：经典制备协议集合\n多轨迹／种子／尺寸", fillcolor="#E6F1FA"];
+  fidelity [label="输入 B：高保真小盒集合\n势与制备路径经独立验收", fillcolor="#E6F1FA"];
+  split [label="训练前按轨迹／种子／条件分组\n去重防泄漏；划分训练／开发／测试", fillcolor="#FFF1DB"];
+  train [label="训练／开发集\n固定条件 c＝协议、ρ、T、N"];
+  frozen [label="冻结测试：独立轨迹／核验点\n禁止训练、选点与阈值调节", fillcolor="#FBE7E7"];
+  pretrain [label="主路线：条件 score／diffusion\n经典预训练 sθ(xₜ,t,c)", fillcolor="#E7E3F7"];
+  alternatives [label="比较路线（待验证）\nflow matching／normalizing flow"];
+  finetune [label="少量高保真数据微调\n固定数据预算；披露预训练尺寸", fillcolor="#E7E3F7"];
+  baselines [label="并行同预算对照\n原生成／原生成＋弛豫\n从零训练／同数据微调", fillcolor="#FFF1DB"];
+  sampling [label="冻结权重 → 周期等变大盒采样\n指定组成／条件／N；多独立种子"];
+  raw [label="先保存原始样本、晶胞、种子与版本\n所有尝试、拒绝与成本均留档", fillcolor="#E6F1FA"];
+  hardqa [shape=diamond, label="硬 QA 通过？\n组成／周期盒／重叠\n数值与几何有效性", fillcolor="#FFF1DB"];
+  rejected [label="否：保留拒绝样本\n记录原因、比例与成本", fillcolor="#FBE7E7"];
+  process [label="是：固定后处理势／容差／步数\n分别报告裸生成与处理后样本"];
+  structural [label="结构评价\n配位／角／环／S(q)／缺陷\n区间与参数敏感性"];
+  independent [label="独立性质评价\nE(V)／体积模量／核验误差\n统一温度、应变与弛豫"];
+  joint [label="联合证据：结构 AND 独立性质 AND 成本\n冻结留出；跨种子／尺寸；包含拒绝率", fillcolor="#DCEEE8"];
+  gate [shape=diamond, label="预注册阈值\n全部通过？", fillcolor="#FFF1DB"];
+  go [label="是：GO\n验证更广条件与适用范围", fillcolor="#DCEEE8"];
+  stop [label="否：NO-GO\n开发阶段回环；最终测试后\n须新测试周期", fillcolor="#FBE7E7"];
+  {rank=same; classical; fidelity;}
+  classical -> split; fidelity -> split;
+  split -> train; split -> frozen;
+  {rank=same; train; frozen;}
+  train -> pretrain; train -> alternatives [style=dashed];
+  {rank=same; pretrain; alternatives;}
+  pretrain -> finetune; alternatives -> baselines [style=invis];
+  {rank=same; finetune; baselines;}
+  train -> baselines [style=dashed, constraint=false];
+  finetune -> sampling; alternatives -> sampling [style=dashed]; baselines -> sampling;
+  sampling -> raw -> hardqa;
+  hardqa -> rejected; hardqa -> process;
+  {rank=same; process; rejected;}
+  process -> structural; process -> independent;
+  {rank=same; structural; independent;}
+  frozen -> structural [style=dashed, constraint=false];
+  frozen -> independent [style=dashed, constraint=false];
+  rejected -> joint [style=dashed];
+  structural -> joint; independent -> joint;
+  joint -> gate; gate -> go; gate -> stop;
+  {rank=same; go; stop;}
+}

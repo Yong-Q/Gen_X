@@ -18,4 +18,15 @@ reports/build/
 /reports/2026-10-22_v4/
 /reports/2026-10-22_final/
 /reports/2026-10-22_release/
+# Superseded layout/build evidence from the project-proposal revision stays local.
+/reports/2026-10-22_research_v2/
+/reports/2026-10-22_research_v2_release/
+/reports/2026-10-22_research_complete/
+/reports/2026-10-22_research_v2_final/
+/reports/2026-10-22_research_v2_delivered/
+/docs/figures/research_v2/layout_qa_evidence/
+/site/qa/browser-20261022T095148Z-d3cddb/
+/site/qa/browser-20261022T095320Z-915896/
+/site/qa/browser-20261022T095423Z-a3be3e/
+/site/qa/browser-20261022T095502Z-934282/
 

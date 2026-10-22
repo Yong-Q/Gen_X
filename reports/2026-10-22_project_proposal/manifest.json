@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-22",
+  "status": "Research proposal and existing engineering evidence; no new scientific training or simulation.",
+  "sources": {
+    "docs/research_program.md": "4c49ae989c26de7e7d9900f9ee89aeff594896035d5afbb947176d2e03c477a1",
+    "docs/generative_theory.md": "1b567262ffb249afa516c87306ade68fede7f07d4c8239621bf6ac6023747837",
+    "docs/documentation_patterns.md": "0167d04e9cba3b0dcbe523c0fe35c5c5159418d0daf5e56985c5ca08138aa2df",
+    "tools/build_pdfs.sh": "63c9c45f948e09ac75fa66933c99b8d18ebcf62895a625f800ed612dd3d5423e",
+    "tools/pdf_links.lua": "913a52ccd740a46c696e568874e97e8feea431da15945a04ff7c339950e7c37d",
+    "tools/pdf_style.tex": "8ab04fffb42b6b0eec6bb04dcc75e2fb89d4de9dd0b545a4d255c555e70dd40d",
+    "docs/figures/research_v2/01_scientific_causality.dot": "9883512edfad5be5f96492607770aebebde8a2b1acb88c6d8e8cd4fdc247b1f5",
+    "docs/figures/research_v2/02_model_and_evaluation_pipeline.dot": "7127a6c742a2acf9d6497b1c8826163fb3bb0bbad7bf922c91502348db23bc38",
+    "docs/figures/research_v2/03_separate_feedback_and_provenance.dot": "9cada975143e81efdf90d9ce1b34425e2d16ee3a40f53bccf4a47d2982be5852",
+    "docs/figures/research_v2/01_scientific_causality.pdf": "d0996c1938c64bf5bd8604a3795d4295ec04ee2a241e25f52f0c3378031132fb",
+    "docs/figures/research_v2/02_model_and_evaluation_pipeline.pdf": "977a326bb3fe1f8ab9ca5104ec21278665a17aabe019fee465a9d03fc00344aa",
+    "docs/figures/research_v2/03_separate_feedback_and_provenance.pdf": "4238ae684ed1cc4d7cc77aa040ae25fee9dda2d2cccda9cc0da8332e1ddc6ad8"
+  },
+  "outputs": {
+    "bgmat_cpu_generation.pdf": "d0f8b7a1ac48d20f931eb070a2b11db641bf444aa62b61ca3bdccaaa1680270b",
+    "documentation_patterns.pdf": "0e046201fa81a56308d9d08945c276109cd6162287f6455a11f582e83a2e093a",
+    "literature_survey.pdf": "b289ef941ce1997a7b3a532d41600b57e15c7abd9777b431111fff89fb85990d",
+    "research_program.pdf": "0cf730c54a721d16981a6d69fa036b0bcf31541bb6e67acc9dc875f53e0c1c54",
+    "technical_roadmap.pdf": "2a3923093163ff10ca11907e14cbd520d66a239788bda7a81ad5d25e736fea8f"
+  },
+  "build": "tools/build_pdfs.sh with a new snapshot directory. Documentation-patterns PDF added using the same Pandoc flags after that optional output was added to the script.",
+  "qa": "qa/pdf-validation.json; Firefox desktop1440/mobile390 site/qa/browser-20261022T095911Z-9ae24b/browser-validation.json",
+  "skill_lock": ".agents/skills-mermaid-lock.json",
+  "visual_review": "Reviewed proposal summary, derivation, planning and three vector diagrams; final PDF has 18 pages, no text outside page bounds.",
+  "limitations": "Material and quantitative resource budget remain undecided; no claim of material-level improvement."
+}

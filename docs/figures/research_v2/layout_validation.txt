@@ -1,0 +1,13 @@
+Layout QA — 2026-10-22
+Status: proposed research workflows, not scientific results.
+Visual inspection: all three final PNG previews inspected; no overlapping labels or clipped nodes seen.
+Fonts: Noto Sans CJK SC; PDFs contain extractable text; SVG XML parsing passed.
+PDF integration: use one portrait figure page each, preserve aspect ratio, cap figure height at 255 mm.
+At height 255 mm, every extracted text span remains >= 11 px equivalent (96 dpi).
+Do not force every image to 170 mm width: tall figures would exceed an A4 page.
+Initial and intermediate layout outputs are retained under layout_qa_evidence as failure evidence.
+
+01_scientific_causality: 146.05 × 262.82 mm; min text 8.723 pt; at 255 mm height 11.28 px; PDF 108234 B; SVG 22652 B.
+02_model_and_evaluation_pipeline: 167.57 × 262.82 mm; min text 8.947 pt; at 255 mm height 11.57 px; PDF 109820 B; SVG 24982 B.
+03_separate_feedback_and_provenance: 162.63 × 262.82 mm; min text 8.591 pt; at 255 mm height 11.11 px; PDF 940519 B; SVG 23469 B.
+Theory review correction: A labels the joint H1/H2 hypothesis; B distinguishes development feedback from a new test cycle required after final testing.

@@ -69,11 +69,19 @@ try:
             assert data["documentWidth"] <= width, (name, width, data)
             assert data["h1"] == 1 and data["active"] == name + ".html", data
             assert data["navHidden"] == (width <= 800), data
+            if name == "theory":
+                scroll = json.loads(evaluate("JSON.stringify((() => {const all=[...document.querySelectorAll('.math-scroll')];const wide=all.filter(e=>e.scrollWidth>e.clientWidth+1);let reachable=true;for(const e of wide){e.scrollLeft=50;reachable=reachable&&e.scrollLeft>0;e.scrollLeft=0;}return {displayEquations:all.length,scrollableEquations:wide.length,contentReachable:reachable};})())", context))
+                assert scroll["displayEquations"] >= 26 and scroll["contentReachable"], scroll
+                data["formula_scroll"] = scroll
             data.update({"page": name, "viewport": [width, height]})
             checks.append(data)
-            if name == "index" or (name == "tutorial" and width == 1440):
+            if name in ("index", "research", "documentation") or (name == "tutorial" and width == 1440):
                 shot = command("browsingContext.captureScreenshot", {"context": context, "origin": "viewport"})
                 (QA / (name + "-" + str(width) + ".png")).write_bytes(base64.b64decode(shot["data"]))
+            if name == "theory":
+                evaluate("(() => {const all=[...document.querySelectorAll('.math-scroll')];const e=all.find(e=>e.scrollWidth>e.clientWidth+1)||all[0];e.scrollIntoView({block:'center'});return true;})()", context)
+                shot = command("browsingContext.captureScreenshot", {"context": context, "origin": "viewport"})
+                (QA / (name + "-formula-" + str(width) + ".png")).write_bytes(base64.b64decode(shot["data"]))
             if name == "tutorial":
                 result = evaluate("(() => {const s=document.getElementById('search-input');s.value='反馈';s.dispatchEvent(new Event('input'));return document.querySelectorAll('#search-results a').length})()", context)
                 assert result > 0, "Heading search produced no results"

@@ -1,0 +1,237 @@
+{
+  "status": "passed",
+  "outside_page": [],
+  "files": {
+    "bgmat_cpu_generation.pdf": {
+      "pages": 3,
+      "sha256": "d0f8b7a1ac48d20f931eb070a2b11db641bf444aa62b61ca3bdccaaa1680270b",
+      "page_summary": [
+        {
+          "page": 1,
+          "characters": 510,
+          "beginning": "bgmat 单珠水冰：真实生成示例与复跑教程 / 2026-10-22 / 目录 / bgmat：真正跑通的预训练构型生成 / 2 / 1. 生成了什么 / . . . . . . ."
+        },
+        {
+          "page": 2,
+          "characters": 1259,
+          "beginning": "bgmat：真正跑通的预训练构型生成 / 运行日期：2026-10-22。这个独立示例完成了固定源码和权重→实际采样→坐标导出→基本验证，与此前 / 使用人工坐标的sy"
+        },
+        {
+          "page": 3,
+          "characters": 1745,
+          "beginning": "若默认Python 不是3.10，设置GENX_PYTHON310 为已有Python 3.10 解释器路径。脚本只在项目内准备 / external/bgmat "
+        }
+      ]
+    },
+    "documentation_patterns.pdf": {
+      "pages": 3,
+      "sha256": "0e046201fa81a56308d9d08945c276109cd6162287f6455a11f582e83a2e093a",
+      "page_summary": [
+        {
+          "page": 1,
+          "characters": 487,
+          "beginning": "Gen_X：GitHub 科研文档案例与技能采用方案 / 2026-10-22 / 目录 / Gen_X 科研文档的参考模式与采用方案 / 2 / 1. 先区分文档要回答的问题. "
+        },
+        {
+          "page": 2,
+          "characters": 1332,
+          "beginning": "Gen_X 科研文档的参考模式与采用方案 / 审阅日期：2026-10-22。以下项目依据实际文档和notebook 内容筛选，链接固定到审阅提交。借鉴的是解 / 释、"
+        },
+        {
+          "page": 3,
+          "characters": 1579,
+          "beginning": "3. 把公式、训练、采样与物理验证接起来 / 链条位置 / 文档要求 / 页面与证据落点 / 科学目标→目标分布 / 先说明研究缺口、比较对象、主要 / 性质及停止条件；玻璃显式包含 / "
+        }
+      ]
+    },
+    "literature_survey.pdf": {
+      "pages": 7,
+      "sha256": "b289ef941ce1997a7b3a532d41600b57e15c7abd9777b431111fff89fb85990d",
+      "page_summary": [
+        {
+          "page": 1,
+          "characters": 1141,
+          "beginning": "构型概率分布的学习与生成：文献调研 / 2026-10-22 / 目录 / 从构型概率分布学习到大体系采样：水、非晶与聚合物调研 / 2 / 1. 本项目究竟学习什么 / . . . "
+        },
+        {
+          "page": 2,
+          "characters": 1545,
+          "beginning": "从构型概率分布学习到大体系采样：水、非晶与聚合物调研 / 核查日期：2026-10-22。本文依据论文原文、作者页面和官方代码仓库整理；区分正式发表、预印本、公开代"
+        },
+        {
+          "page": 3,
+          "characters": 2238,
+          "beginning": "关性。这证明潜空间路线已有具体实例，但能量回归头不等于可以计算可靠原子力的ML 势，紧凑编码也不自 / 动带来跨尺寸解码。本次未核实其训练／生成原子数和公开权重，不"
+        },
+        {
+          "page": 4,
+          "characters": 1440,
+          "beginning": "3. 尺度与物理含义的统一比较 / 方法 / 训练或参考规模 / 已报告输出规模 / 不能据此推出的结论 / DM2 ／SiO₂ / 3000 原子MD 盒 / 最大112,848 原子 / "
+        },
+        {
+          "page": 5,
+          "characters": 1194,
+          "beginning": "5. “实验反演”与“生成分布”的相邻工作 / 如果目标变为给定散射或RDF 反推结构，EPSR 是应保留的传统基线。它用散射约束修正参考势并调整结构； / 但同样好的"
+        },
+        {
+          "page": 6,
+          "characters": 1214,
+          "beginning": "机器学习势、运行环境与复用边界 / 调研日期：2026-10-22。以下机器学习水势的信息来自网页、官方仓库和本机只读检查；本节所列MLP 权重 / 尚未下载和加载。已"
+        },
+        {
+          "page": 7,
+          "characters": 786,
+          "beginning": "检查项 / 观察结果 / 尚未验证 / 调度 / sbatch、squeue、sinfo、 / scontrol 可用；用户确认使用 / Slurm / GPU 任务本轮不提交 / CPU s"
+        }
+      ]
+    },
+    "research_program.pdf": {
+      "pages": 18,
+      "sha256": "0cf730c54a721d16981a6d69fa036b0bcf31541bb6e67acc9dc875f53e0c1c54",
+      "page_summary": [
+        {
+          "page": 1,
+          "characters": 2853,
+          "beginning": "Gen_X 研究方案：科学意义、生成理论与验证路线 / 2026-10-22 / 目录 / 从高保真小体系到大尺度非晶系综：科学问题与技术方案 / 2 / 项目摘要. . . . "
+        },
+        {
+          "page": 2,
+          "characters": 1602,
+          "beginning": "从高保真小体系到大尺度非晶系综：科学问题与技术方案 / 版本：2026-10-22，第二版。本文是拟开展的研究方案，数学基础属于已有理论，尚无本项目的材料科学结 / 论"
+        },
+        {
+          "page": 3,
+          "characters": 548,
+          "beginning": "A  科学问题：从制备集合到独立响应 / 输入：组成、周期盒、状态条件 / 候选材料：非晶 SiO₂ / 制备协议：熔融—淬火—老化 / 冷却速率、温度、压力、随机种子 / 参考哈"
+        },
+        {
+          "page": 4,
+          "characters": 1271,
+          "beginning": "H3 首先是诊断性假设。发现环分布与模量相关，只能说明关联；要主张具体网络特征导致响应变化，还需受控 / 干预或额外物理分析。方案允许假设失败，并要求记录失败发生的"
+        },
+        {
+          "page": 5,
+          "characters": 1280,
+          "beginning": "ℒdiff(𝜃) = 𝔼𝑥0,𝑡,𝜖[𝜆𝑡‖𝜖−𝜖𝜃(𝑥𝑡, 𝑡, 𝑐)‖2] . / 本方案选它作为首个主线，是因为有可比较的非晶方法和自然的预训练／微调接口；这"
+        },
+        {
+          "page": 6,
+          "characters": 593,
+          "beginning": "B  数据 → 模型 → 采样 → 联合验收 / 输入 A：经典制备协议集合 / 多轨迹／种子／尺寸 / 训练前按轨迹／种子／条件分组 / 去重防泄漏；划分训练／开发／测试 / 输"
+        },
+        {
+          "page": 7,
+          "characters": 1413,
+          "beginning": "6.2 验收目标参考，再谈重新训练 / 优先复用适合最终材料的公开势或专用权重。独立参考点检查能量、力、应力及制备路径覆盖；模型家族名字、 / 通用势标签或训练集规模不"
+        },
+        {
+          "page": 8,
+          "characters": 1278,
+          "beginning": "8. 主动学习需要吗：两条回环分别处理 / 先冻结一轮基线，通过具体失败决定补什么信息： / 图3 ｜两条独立反馈回环。生成器学习出现概率，势学习能量及导数；二者可交换"
+        },
+        {
+          "page": 9,
+          "characters": 1210,
+          "beginning": "工作包 / 责任与输入 / 阶段交付 / WP2：参考与数据 / 势、电子结构核验、制备协议 / 版本化数据、分组划分、参考验收 / 和成本清单 / WP3：生成与工程 / 基线实现、预训练／"
+        },
+        {
+          "page": 10,
+          "characters": 587,
+          "beginning": "C  两条反馈回环与最终独立裁决 / 输入：开发集诊断＋冻结验收协议 / 最终测试不参与触发、选点或调阈值 / 回环 1：生成器／分布 / 触发：重复 QA 失败／统计缺口 / 回"
+        },
+        {
+          "page": 11,
+          "characters": 1061,
+          "beginning": "[S2] Erhard, L. C., Rohrer, J., Albe, K. & Deringer, V. L. A machine-learned int"
+        },
+        {
+          "page": 12,
+          "characters": 1419,
+          "beginning": "数学基础附录：从高保真信息到非晶结构系综 / 本文为研究方案的理论依据，而非已完成结果。拟研究的问题是：能否利用少量高保真能量、力、应力及结构 / 信息，校正由大量经典"
+        },
+        {
+          "page": 13,
+          "characters": 1299,
+          "beginning": "ℒMLP(𝜓) = 𝔼𝒟H [𝑤𝐸(𝑈𝜓−𝐸H / 𝑁 / ) / 2 / + 𝑤𝐹 / 3𝑁∑ / 𝑖 / ‖𝐹𝜓,𝑖−𝐹H / 𝑖‖2 + 𝑤𝜎 / 9 ‖𝜎𝜓−𝜎H‖2 / 𝐹] . / 各权重需吸"
+        },
+        {
+          "page": 14,
+          "characters": 1419,
+          "beginning": "度量的是已观察样本的权重集中程度。它不是所有观测量共同的误差保证，也不能发现完全漏采的盆地；相关 / 样本还需另行处理自相关。因此即使ESS 较高，也应检查独立重复"
+        },
+        {
+          "page": 15,
+          "characters": 1218,
+          "beginning": "𝑥𝑡= √̄𝛼𝑡𝑥0 + √1 −̄ 𝛼𝑡𝜖, / 𝜖∼𝒩(0, 𝐼). / 由Bayes 公式，𝑞(𝑥𝑡−1 ∣𝑥𝑡, 𝑥0) 正比于两个高斯因子的乘积。将关于𝑥𝑡−"
+        },
+        {
+          "page": 16,
+          "characters": 1508,
+          "beginning": "给定𝑥𝑡= 𝑦, 𝑡后，将任意预测与条件均值相减并展开平方，交叉项因条件残差均值为零而消失。因此 / 𝔼[‖𝑣−𝑢‖2 ∣𝑦, 𝑡] = ‖𝑣−𝔼[𝑢∣𝑦, 𝑡]‖"
+        },
+        {
+          "page": 17,
+          "characters": 1618,
+          "beginning": "∇log 𝑞𝜆= ∇log 𝑞0 −𝜆𝛽∇𝑈H. / 该恒等式说明能量梯度具有怎样的偏置方向，并不说明任意去噪步加入该梯度就能精确采样上述终点分布。对 / 于加噪时刻，"
+        },
+        {
+          "page": 18,
+          "characters": 1605,
+          "beginning": "参考文献 / 1. Vollmayr, K., Kob, W. & Binder, K. Cooling-rate effects in amorphous sil"
+        }
+      ]
+    },
+    "technical_roadmap.pdf": {
+      "pages": 9,
+      "sha256": "2a3923093163ff10ca11907e14cbd520d66a239788bda7a81ad5d25e736fea8f",
+      "page_summary": [
+        {
+          "page": 1,
+          "characters": 1087,
+          "beginning": "Gen_X：可行技术路线与运行记录 / 2026-10-22 / 目录 / Gen_X 技术路线：学习构型概率分布，再生成结构系综 / 2 / 1. 研究对象与起步选择 / . . ."
+        },
+        {
+          "page": 2,
+          "characters": 1486,
+          "beginning": "Gen_X 技术路线：学习构型概率分布，再生成结构系综 / 调研截止：2026-10-22。本文给出整体科学路线。最初完成Bash/Slurm CPU 冒烟测试；随"
+        },
+        {
+          "page": 3,
+          "characters": 1492,
+          "beginning": "模型家族 / 学习目标与采样 / 本项目取舍及代表工作 / 自回归 / 分解为有序条件概率的乘积，逐 / 点、逐片或逐链生成 / 易加入局部条件和拓扑，但生成顺 / 序、边界闭合和误差累积"
+        },
+        {
+          "page": 4,
+          "characters": 1655,
+          "beginning": "阶段 / 输入与产物 / 验收及停止条件 / S0：调度与溯源 / 版本化路线配置、明确标为 / synthetic 的小样例；输出唯一 / run ID、manifest、日志及候选"
+        },
+        {
+          "page": 5,
+          "characters": 568,
+          "beginning": "实验约束可以作为后续研究：对系综平均⟨𝑆(𝑞)⟩而非每帧曲线施加含误差的约束，并留出另一实验通道。由 / 同一𝑆(𝑞) 变换得到的𝑔(𝑟) 不算独立验证；最终要检验"
+        },
+        {
+          "page": 6,
+          "characters": 4131,
+          "beginning": "CPU smoke execution record / Executed on 2026-10-22 in /home/qiuyong/bza/H2O/Gen_X"
+        },
+        {
+          "page": 7,
+          "characters": 2559,
+          "beginning": "revised suite passes 14/14 (regression green). Tests create temporary directorie"
+        },
+        {
+          "page": 8,
+          "characters": 3228,
+          "beginning": "f4ce17d74d62d8cd9cedde1ba72716615fa9fe95afb4fbdb6fcb8ac63cd5fff1, / matching / the / o"
+        },
+        {
+          "page": 9,
+          "characters": 693,
+          "beginning": "provenance; bgmat bead data are not called all-atom water. The queue priority is"
+        }
+      ]
+    }
+  },
+  "scope": "Checks PDF text bounds and page summaries; does not validate experimental claims."
+}

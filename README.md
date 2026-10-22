@@ -24,13 +24,14 @@
 ## 阅读入口
 
 - [HTML工程教程](site/index.html)：离线可打开，含导航、检索、复制命令和证据链接。
+- [研究方案](docs/research_program.md)与[生成理论推导](docs/generative_theory.md)：科学动机、可检验假设、数学基础及详细流程。
 - [文献调研](docs/literature_survey.md)：别人实际做到了什么，数据、尺度和代码边界。
 - [技术路线](docs/technical_roadmap.md)：模型选型、里程碑、验收和两层反馈回环。
 - [势模型及环境](docs/potentials_and_environment.md)：复用权重、版本与运行前置条件。
 - [执行结果](docs/smoke_results.md)：实际命令、作业及验证记录。
 - [PDF目录](reports/)：调研与技术路线快照。
 - [设计范围](docs/design.md)和[实施计划](docs/implementation_plan.md)。
-- [文档技能来源](docs/documentation_skills.md)：从官方GitHub拉取的两个项目级skill及固定版本。
+- [文档案例](docs/documentation_patterns.md)与[技能来源](docs/documentation_skills.md)：GitHub参考、项目级skill及固定版本。
 
 ## 使用与开发
 

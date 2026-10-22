@@ -1,0 +1,21 @@
+*** You are running in headless mode.
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.467375) [GFX1-]: glxtest: Unable to open a connection to the X server
+WebDriver BiDi listening on ws://127.0.0.1:9237
+1792663152765	RemoteAgent	INFO	Perform WebSocket upgrade for incoming connection from 127.0.0.1:58740
+JavaScript error: chrome://remote/content/shared/messagehandler/transports/js-window-actors/MessageHandlerFrameChild.sys.mjs, line 96: InvalidStateError: JSWindowActorChild.sendQuery: JSWindowActorChild cannot send at the moment
+JavaScript error: chrome://remote/content/shared/messagehandler/transports/js-window-actors/MessageHandlerFrameChild.sys.mjs, line 96: InvalidStateError: JSWindowActorChild.sendQuery: JSWindowActorChild cannot send at the moment
+JavaScript error: chrome://remote/content/shared/messagehandler/transports/js-window-actors/MessageHandlerFrameChild.sys.mjs, line 96: InvalidStateError: JSWindowActorChild.sendQuery: JSWindowActorChild cannot send at the moment
+console.warn: RSLoader: Recipe hnt-wattle-wcw-pref-flip-jul-22 not returned from collection nimbus-secure-experiments because it contains feature newtabTrainhop, which is disallowed for that collection.
+console.warn: RSLoader: Recipe hnt-wattle-wcw-pref-flip-jul-22-v2 not returned from collection nimbus-secure-experiments because it contains feature newtabTrainhop, which is disallowed for that collection.
+console.warn: RSLoader: Recipe new-tab-157020260831183837-to-release-155-addondeployment not returned from collection nimbus-secure-experiments because it contains feature newtabTrainhopAddonDeployment, which is disallowed for that collection.
+console.warn: RSLoader: Recipe new-tab-158120260920214645-to-release-156 not returned from collection nimbus-secure-experiments because it contains feature newtabTrainhopAddonDeployment, which is disallowed for that collection.
+console.warn: RSLoader: Recipe new-tab-159020260925223456-to-release-157 not returned from collection nimbus-secure-experiments because it contains feature newtabTrainhopAddonDeployment, which is disallowed for that collection.
+console.warn: RSLoader: Recipe new-tab-159120261002163917-to-release-157 not returned from collection nimbus-secure-experiments because it contains feature newtabTrainhopAddonDeployment, which is disallowed for that collection.
+console.warn: RSLoader: Recipe new-tab-160020261011195215-to-release-158 not returned from collection nimbus-secure-experiments because it contains feature newtabTrainhopAddonDeployment, which is disallowed for that collection.
+console.warn: RSLoader: Recipe new-tab-160220261016183914-to-release-158 not returned from collection nimbus-secure-experiments because it contains feature newtabTrainhopAddonDeployment, which is disallowed for that collection.
+console.warn: RSLoader: Recipe train-hop-registering-changes-to-existing-telemetry-pilot-to-beta not returned from collection nimbus-secure-experiments because it contains feature newtabTrainhopAddonDeployment, which is disallowed for that collection.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
