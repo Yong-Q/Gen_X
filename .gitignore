@@ -1,0 +1,13 @@
+.venv*/
+.cache/
+external/
+models/
+data/
+__pycache__/
+.pytest_cache/
+*.pyc
+reports/build/
+*.aux
+*.out
+*.toc
+
