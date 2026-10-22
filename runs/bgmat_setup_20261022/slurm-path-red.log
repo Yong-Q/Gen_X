@@ -1,0 +1,18 @@
+test_invalid_counts_and_seed_rejected (test_bgmat_inference.InferenceIOTests.test_invalid_counts_and_seed_rejected) ... ok
+test_output_must_be_inside_repo (test_bgmat_inference.InferenceIOTests.test_output_must_be_inside_repo) ... ok
+test_run_directory_cannot_be_reused (test_bgmat_inference.InferenceIOTests.test_run_directory_cannot_be_reused) ... ok
+test_slurm_spooled_script_uses_submit_directory_and_exports_runtime (test_bgmat_inference.InferenceIOTests.test_slurm_spooled_script_uses_submit_directory_and_exports_runtime) ... FAIL
+test_xyz_has_cell_particles_and_coarse_grained_label (test_bgmat_inference.InferenceIOTests.test_xyz_has_cell_particles_and_coarse_grained_label) ... ok
+
+======================================================================
+FAIL: test_slurm_spooled_script_uses_submit_directory_and_exports_runtime (test_bgmat_inference.InferenceIOTests.test_slurm_spooled_script_uses_submit_directory_and_exports_runtime)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/qiuyong/bza/H2O/Gen_X/tests/test_bgmat_inference.py", line 58, in test_slurm_spooled_script_uses_submit_directory_and_exports_runtime
+    self.assertIn(str(ROOT/'.venv-bgmat/bin/python'),result.stdout)
+AssertionError: '/home/qiuyong/bza/H2O/Gen_X/.venv-bgmat/bin/python' not found in '--cpu-bind=cores\n/home/qiuyong/bza/H2O/Gen_X/tests/.venv-bgmat/bin/python\n/home/qiuyong/bza/H2O/Gen_X/tests/scripts/bgmat_inference.py\n--output\nruns/example\n'
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.009s
+
+FAILED (failures=1)

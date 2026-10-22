@@ -22,6 +22,7 @@ SITE = ROOT / "site"
 PAGES = [
     ("README.md", "index.html", "项目概览", "从构型分布到结构系综", "目标、当前边界与阅读入口"),
     ("docs/tutorial.md", "tutorial.html", "使用教程", "从配置到结果", "启动、运行、检查与反馈"),
+    ("docs/real_generation_results.md", "generation.html", "生成示例", "单珠水冰：真实预训练采样", "独立示例、生成构型与复跑步骤"),
     ("docs/literature_survey.md", "literature.html", "文献调研", "已有方法与证据边界", "水、非晶与聚合物的分布学习"),
     ("docs/technical_roadmap.md", "roadmap.html", "技术路线", "从可运行到可验证", "模型选择、科学验收与两条反馈回环"),
     ("docs/potentials_and_environment.md", "environment.html", "势与环境", "参考势与运行前置条件", "复用权重、环境和适用范围"),
@@ -126,7 +127,10 @@ def pdf_panel():
         for survey in reports.rglob("literature_survey.pdf"):
             roadmap = survey.parent / "technical_roadmap.pdf"
             if roadmap.is_file() and survey.stat().st_size and roadmap.stat().st_size:
-                snapshots.append([survey, roadmap])
+                group=[survey,roadmap]
+                example=survey.parent/'bgmat_cpu_generation.pdf'
+                if example.is_file(): group.append(example)
+                snapshots.append(group)
     paths = max(snapshots, key=lambda group: max(path.stat().st_mtime_ns for path in group)) if snapshots else []
     if paths:
         items = "".join('<li><a href="{}">{}</a><span>{} KB</span></li>'.format(
@@ -146,7 +150,7 @@ PIPELINE = """<section class="pipeline" aria-labelledby="pipeline-title">
     <li><strong>采样系综</strong><span>生成器、种子与版本记录</span></li>
     <li><strong>独立验证</strong><span>分布、物理量与反馈更新</span></li>
   </ol>
-  <p>当前已验证的是下方 CPU 冒烟入口的调度与溯源。图中模型学习、真实采样和科学验证属于后续阶段。</p>
+  <p>仓库分别维护研究项目与公共工具。已有CPU调度检查和bgmat真实生成示例；新模型训练及完整科学验收由各课题独立推进。</p>
 </section>"""
 
 
@@ -182,12 +186,12 @@ def render(page, body, headings, pdfs):
     <a class="brand" href="index.html"><span class="brand-symbol" aria-hidden="true">G<span>×</span></span><span><strong>Gen_X</strong><small>构型分布与结构生成</small></span></a>
     <div class="search"><label for="search-input">查找文档章节</label><input type="search" id="search-input" placeholder="试试：水、Slurm、反馈" autocomplete="off" aria-controls="search-results"><div id="search-results" hidden></div><span id="search-status" class="visually-hidden" role="status"></span></div>
     <nav class="primary-nav" aria-label="主要页面">{navigation}</nav>
-    <div class="sidebar-bottom"><p><span class="status-dot" aria-hidden="true"></span>CPU 冒烟已验证</p><small>模型推理与科学验证尚未运行</small><a href="#pdf-downloads">查看 PDF 快照</a><a href="../README.md">仓库 Markdown 入口</a></div>
+    <div class="sidebar-bottom"><p><span class="status-dot" aria-hidden="true"></span>已有真实生成示例</p><small>CPU运行；科研统计验收另列</small><a href="#pdf-downloads">查看 PDF 快照</a><a href="../README.md">仓库 Markdown 入口</a></div>
   </aside>
   <main class="page" id="main" tabindex="-1">
     <div class="page-top"><span>Gen_X / {label}</span><a href="{source_url}">查看 Markdown 源文档</a></div>
     <header class="page-heading"><h1>{title}</h1><p>{subtitle}</p></header>
-    <div class="scope-note"><strong>当前执行范围</strong><span>配置、Bash、Slurm CPU、合成 QA 与候选队列。真实模型推理和科学分布验证另行验收。</span></div>
+    <div class="scope-note"><strong>能力与证据</strong><span>公共调度smoke与真实生成示例分开记录。bgmat已输出8个216粒子构型；这不替代完整的分布与物性验证。</span></div>
     <div class="article-grid"><article class="prose">{pipeline}{body}</article><aside class="toc" aria-label="本页章节"><details open><summary>本页章节</summary><ol>{toc}</ol></details></aside></div>
     {pdfs}
     <nav class="adjacent" aria-label="相邻页面">{adjacent}</nav>

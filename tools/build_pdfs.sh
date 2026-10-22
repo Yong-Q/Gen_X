@@ -40,4 +40,9 @@ pandoc "$repo_root/docs/literature_survey.md" "$repo_root/docs/potentials_and_en
 pandoc "$repo_root/docs/technical_roadmap.md" "$repo_root/docs/smoke_results.md" \
   "${common[@]}" -M 'title=Gen_X：可行技术路线与运行记录' \
   -o "$out_dir/technical_roadmap.pdf" >"$out_dir/roadmap_build.log" 2>&1
+if [[ -f "$repo_root/docs/real_generation_results.md" ]]; then
+  pandoc "$repo_root/docs/real_generation_results.md" "${common[@]}" \
+    -M 'title=bgmat单珠水冰：真实生成示例与复跑教程' \
+    -o "$out_dir/bgmat_cpu_generation.pdf" >"$out_dir/generation_build.log" 2>&1
+fi
 printf '%s\n' "$out_dir/literature_survey.pdf" "$out_dir/technical_roadmap.pdf"

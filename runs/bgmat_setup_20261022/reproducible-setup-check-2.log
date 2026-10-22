@@ -1,0 +1,11 @@
+Using Python 3.10.4 environment at: .venv-bgmat
+Checked 78 packages in 4ms
+Using Python 3.10.4 environment at: .venv-bgmat
+Resolved 1 package in 1.13s
+   Building bgmat @ file:///home/qiuyong/bza/H2O/Gen_X/external/bgmat
+      Built bgmat @ file:///home/qiuyong/bza/H2O/Gen_X/external/bgmat
+Prepared 1 package in 200ms
+Uninstalled 1 package in 0.47ms
+Installed 1 package in 1ms
+ ~ bgmat==0.0 (from file:///home/qiuyong/bza/H2O/Gen_X/external/bgmat)
+Pinned source, checkpoint, and Python environment are ready. Inference still requires Slurm.

@@ -1,6 +1,6 @@
 # Gen_X：构型概率分布学习与生成
 
-日期：2026-10-22。用户已指定本仓库、Slurm、多智能体协作，并将本轮执行范围收敛为 Bash 调度 smoke；GPU 已满，不提交 GPU 计算。
+日期：2026-10-22。本文件保留最初Bash调度smoke阶段的设计范围。用户随后要求实际跑通生成模型，新阶段见[真实生成计划](real_generation_plan.md)和[运行结果](real_generation_results.md)；仍不使用GPU计算。
 
 ## 目标
 

@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "frames": 8,
+  "beads_per_frame": 216,
+  "all_finite": true,
+  "pbc_range_passed": true,
+  "weights_sum": 1.0000000000000002,
+  "output_hashes_match": true,
+  "extxyz_frames_parsed": 8,
+  "scientific_scope": "IO, geometry and finite probability/energy diagnostics only"
+}

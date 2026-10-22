@@ -1,0 +1,30 @@
+JobId=96496 JobName=genx_bgmat_real
+   UserId=qiuyong(1010) GroupId=normal(1023) MCS_label=N/A
+   Priority=1 Nice=0 Account=(null) QOS=normal
+   JobState=COMPLETED Reason=None Dependency=(null)
+   Requeue=0 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:01:27 TimeLimit=00:20:00 TimeMin=N/A
+   SubmitTime=2026-10-22T16:53:16 EligibleTime=2026-10-22T16:53:16
+   AccrueTime=2026-10-22T16:53:16
+   StartTime=2026-10-22T16:53:16 EndTime=2026-10-22T16:54:43 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-10-22T16:53:16 Scheduler=Main
+   Partition=gpu AllocNode:Sid=home:2693289
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=gpu
+   BatchHost=gpu
+   NumNodes=1 NumCPUs=2 NumTasks=1 CPUs/Task=2 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=2,mem=8G,node=1,billing=2
+   AllocTRES=cpu=2,mem=8G,node=1,billing=2
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=2 MinMemoryNode=8G MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/home/qiuyong/bza/H2O/Gen_X/scripts/run_bgmat_cpu.sh
+   SubmitLine=sbatch --parsable --partition=gpu --job-name=genx_bgmat_real --nodes=1 --ntasks=1 --cpus-per-task=2 --mem=8G --time=00:20:00 --no-requeue --open-mode=append --export=NONE --chdir=/home/qiuyong/bza/H2O/Gen_X --output=/home/qiuyong/bza/H2O/Gen_X/runs/bgmat_job_20261022/slurm-%j.out --error=/home/qiuyong/bza/H2O/Gen_X/runs/bgmat_job_20261022/slurm-%j.err scripts/run_bgmat_cpu.sh --output runs/bgmat_real_20261022 --samples 8
+   WorkDir=/home/qiuyong/bza/H2O/Gen_X
+   Comment=stdout=/home/qiuyong/bza/H2O/Gen_X/runs/bgmat_job_20261022/slurm-96496.out
+   StdErr=/home/qiuyong/bza/H2O/Gen_X/runs/bgmat_job_20261022/slurm-96496.err
+   StdIn=/dev/null
+   StdOut=/home/qiuyong/bza/H2O/Gen_X/runs/bgmat_job_20261022/slurm-96496.out
+   TresPerTask=cpu=2
+

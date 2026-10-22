@@ -1,8 +1,24 @@
 # Gen_X
 
-学习或推断原子构型的概率分布，再采样水、非晶及聚合物结构。
+面向原子构型概率分布学习与生成的研究项目仓库，支持逐步开展水、非晶和聚合物课题。
 
-本仓库同时维护文献调研、技术路线、PDF和可追溯的执行记录。当前阶段按用户要求仅验证 **Bash → Slurm CPU smoke → 日志/manifest → 合成示例反馈队列**；不占用GPU，不将smoke当作论文复现。
+仓库容纳具体研究项目、可复用的运行工具、模型与数据接口、验证和反馈流程。文献调研与教程是其中的文档模块；单个模型复现不会成为整个项目的定义。
+
+## 项目结构
+
+| 位置 | 职责 |
+|---|---|
+| [projects/](projects/) | 独立课题与模型示例的入口、假设和结果说明 |
+| `scripts/`、`configs/` | 可复用的运行入口、配置、模型与来源约定 |
+| `tests/` | 软件行为与关键接口测试 |
+| `runs/` | 小型可追溯运行记录；每次运行使用新目录 |
+| `docs/`、`site/`、`reports/` | 文献、方法、工程教程及HTML/PDF快照 |
+| `external/`、`.venv*/` | 本地上游代码与隔离环境，不纳入Git |
+
+## 课题入口
+
+- [单珠水冰：预训练 bgmat 生成闭环](projects/water_ice_bgmat/README.md)
+- 非晶、全原子水与聚合物的后续路线见[技术路线](docs/technical_roadmap.md)。
 
 ## 阅读入口
 
@@ -15,28 +31,18 @@
 - [设计范围](docs/design.md)和[实施计划](docs/implementation_plan.md)。
 - [文档技能来源](docs/documentation_skills.md)：从官方GitHub拉取的两个项目级skill及固定版本。
 
-## 概率模型与势模型
+## 使用与开发
 
-生成模型学习 `q_theta(configuration | conditions)`；机器学习势计算 `U_phi(configuration)`及其梯度。势可提供参考MD数据、能量引导和物理检查，其内部特征不自动具备逆向解码能力。非晶分布还依赖制备历史，不能仅凭独立采样就声称是无偏平衡分布。
-
-## Smoke入口
+先在`projects/`选择课题，再按其说明准备数据、模型和运行环境。调度接口入门见[教程](docs/tutorial.md)，真正的预训练推理见各项目文档；合成测试与真实构型不可混用。
 
 ```bash
-# 本地：只运行标准库配置/路由/合成数据检查
-bash scripts/local_smoke.sh --config configs/dm2_smoke.json
-
-# 检查Slurm命令，不提交
-bash scripts/submit_smoke.sh --config configs/dm2_smoke.json --dry-run
-
-# 提交一个短CPU smoke，无GPU请求
-bash scripts/submit_smoke.sh --config configs/dm2_smoke.json --partition debug
+python3 -m unittest discover -s tests -v
+python3 tools/build_html.py
 ```
-
-另有`configs/bgmat_smoke.json`和`configs/mbpol_water_smoke.json`。每次使用新run目录；失败应返回非零状态。合成测试构型只用于验证数据流，不能用于论文结构统计。真实模型依赖及推理是后续独立阶段。
 
 ## 资源管理
 
-上游代码、模型权重和训练数据不提交进Git。真实运行将锁定上游commit与模型hash，依赖安装限项目隔离环境。训练/模拟经Slurm运行。小型配置、日志、JSON结果和PDF可追踪。
+上游代码、模型权重和训练数据不提交进Git。每条实际路线锁定上游commit与模型hash，依赖安装限项目隔离环境。训练/模拟经Slurm运行；小型配置、生成示例、日志、JSON结果和PDF可追踪。
 
 ## 更新PDF
 

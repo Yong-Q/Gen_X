@@ -1,0 +1,9 @@
+test_invalid_counts_and_seed_rejected (test_bgmat_inference.InferenceIOTests.test_invalid_counts_and_seed_rejected) ... ok
+test_output_must_be_inside_repo (test_bgmat_inference.InferenceIOTests.test_output_must_be_inside_repo) ... ok
+test_run_directory_cannot_be_reused (test_bgmat_inference.InferenceIOTests.test_run_directory_cannot_be_reused) ... ok
+test_xyz_has_cell_particles_and_coarse_grained_label (test_bgmat_inference.InferenceIOTests.test_xyz_has_cell_particles_and_coarse_grained_label) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.005s
+
+OK

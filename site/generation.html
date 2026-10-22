@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="独立示例、生成构型与复跑步骤">
+  <meta name="theme-color" content="#17324d">
+  <title>生成示例 | Gen_X 工程手册</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/search-index.js" defer></script>
+  <script src="assets/site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="mobile-header"><a href="index.html">Gen_X <span>工程手册</span></a><button id="menu-toggle" aria-expanded="false" aria-controls="sidebar" type="button">目录</button></header>
+  <aside class="sidebar" id="sidebar" aria-label="文档导航">
+    <a class="brand" href="index.html"><span class="brand-symbol" aria-hidden="true">G<span>×</span></span><span><strong>Gen_X</strong><small>构型分布与结构生成</small></span></a>
+    <div class="search"><label for="search-input">查找文档章节</label><input type="search" id="search-input" placeholder="试试：水、Slurm、反馈" autocomplete="off" aria-controls="search-results"><div id="search-results" hidden></div><span id="search-status" class="visually-hidden" role="status"></span></div>
+    <nav class="primary-nav" aria-label="主要页面"><a href="index.html"><span>项目概览</span><small>目标、当前边界与阅读入口</small></a><a href="tutorial.html"><span>使用教程</span><small>启动、运行、检查与反馈</small></a><a aria-current="page" href="generation.html"><span>生成示例</span><small>独立示例、生成构型与复跑步骤</small></a><a href="literature.html"><span>文献调研</span><small>水、非晶与聚合物的分布学习</small></a><a href="roadmap.html"><span>技术路线</span><small>模型选择、科学验收与两条反馈回环</small></a><a href="environment.html"><span>势与环境</span><small>复用权重、环境和适用范围</small></a><a href="evidence.html"><span>执行证据</span><small>实际命令、作业、日志与验证边界</small></a></nav>
+    <div class="sidebar-bottom"><p><span class="status-dot" aria-hidden="true"></span>已有真实生成示例</p><small>CPU运行；科研统计验收另列</small><a href="#pdf-downloads">查看 PDF 快照</a><a href="../README.md">仓库 Markdown 入口</a></div>
+  </aside>
+  <main class="page" id="main" tabindex="-1">
+    <div class="page-top"><span>Gen_X / 生成示例</span><a href="../docs/real_generation_results.md">查看 Markdown 源文档</a></div>
+    <header class="page-heading"><h1>单珠水冰：真实预训练采样</h1><p>独立示例、生成构型与复跑步骤</p></header>
+    <div class="scope-note"><strong>能力与证据</strong><span>公共调度smoke与真实生成示例分开记录。bgmat已输出8个216粒子构型；这不替代完整的分布与物性验证。</span></div>
+    <div class="article-grid"><article class="prose"><p>运行日期：2026-10-22。这个独立示例完成了<strong>固定源码和权重 → 实际采样 → 坐标导出 → 基本验证</strong>，与此前使用人工坐标的synthetic smoke分开记录。</p><h2 id="生成了什么">1. 生成了什么</h2><table><thead><tr class="header"><th>项目</th><th>实际结果</th></tr></thead><tbody><tr class="odd"><td>生成器</td><td>作者预训练bgmat，可逆耦合流和局部图网络</td></tr><tr class="even"><td>已加载参数</td><td>7,972,860个；不是随机初始化权重</td></tr><tr class="odd"><td>物理模型与相态</td><td>mW单珠水、立方冰；每个粒子代表一水分子，无显式H</td></tr><tr class="even"><td>条件</td><td>200 K，数密度0.033567184 Å⁻³，边长约18.600 Å</td></tr><tr class="odd"><td>生成量</td><td>8个不同构型，每个216粒子</td></tr><tr class="even"><td>后处理</td><td>只做周期坐标包装；没有能量最小化、MD、筛选或重采样</td></tr><tr class="odd"><td>运行资源</td><td>2 CPU、8 GB内存申请；没有申请或使用GPU</td></tr><tr class="even"><td>Slurm</td><td>作业96496，COMPLETED，退出码0:0；总耗时87秒</td></tr><tr class="odd"><td>模型推理</td><td>首个样本21.37秒，含JIT；其后约2.11–2.14秒/样本</td></tr></tbody></table><p>作业位于<code>gpu</code>分区的节点，但<code>ReqTRES/AllocTRES</code>均仅有CPU、内存和节点，JAX设备为<code>TFRT_CPU_0</code>。原因是普通CPU分区满载，GPU节点仍有空闲CPU。分区名字不能用于判断是否申请了GPU。</p><p>这说明<strong>真实预训练生成流程可以执行</strong>。它不等于已复现论文中的统计精度、尺寸外推或自由能结果，也不等于生成了常温液态水。</p><h2 id="数据和证据">2. 数据和证据</h2><ul><li><a href="../runs/bgmat_real_20261022/samples.extxyz">samples.extxyz</a>：8帧周期构型，可用ASE或结构可视化软件读取。<code>O</code>是显示标签；计算质量密度时应按一个mW粒子对应一个水分子，而不是氧原子质量。</li><li><a href="../runs/bgmat_real_20261022/samples.npz">samples.npz</a>：坐标、盒子、能量、两类log score及重要性权重。</li><li><a href="../runs/bgmat_real_20261022/samples.csv">samples.csv</a>：逐构型能量、最短距离和权重。</li><li><a href="../runs/bgmat_real_20261022/manifest.json">manifest.json</a>：来源、运行条件、版本、参数数目、时间和输出哈希。</li><li><a href="../runs/bgmat_real_20261022/independent_validation.json">独立读取验证</a>：数组形状、有限数值、PBC范围、权重归一化及extxyz帧数检查。</li><li><a href="../runs/bgmat_job_20261022/slurm-96496.out">采样日志</a>、<a href="../runs/bgmat_job_20261022/slurm-96496.err">stderr</a>、<a href="../runs/bgmat_job_20261022/accounting.txt">Slurm记账</a>与<a href="../runs/bgmat_job_20261022/submission-96496.json">完整提交参数</a>。</li></ul><p>8个样本的最短粒子间距为2.343–2.418 Å，坐标、能量和log score均为有限值。归一化权重和为1，有效样本数ESS约3.53（44.09%）。这只是8个样本的诊断量，不能证明总体权重分布或热力学估计已收敛。</p><p>上游在物理坐标的高斯参考分布中省略了归一化常数，因此这里的模型和目标log score都采用作者的<strong>非归一化、物理加辅助坐标联合空间约定</strong>。归一化重要性权重中常数相消；不要把这些数组当作物理坐标边缘分布的绝对log概率。</p><p>原始生成样本平均能量为−11.7722 kcal/mol/粒子；仓库提供的1000个MD参考样本均值为−11.7487。两个数字仅供排错和量级核对，不将小样本均值接近视为分布验证。</p><h2 id="如何复跑">3. 如何复跑</h2><p>从Gen_X根目录操作。先准备Python 3.10，再运行：</p><pre class="bash"><code>bash tools/setup_bgmat.sh</code></pre><p>若默认Python不是3.10，设置<code>GENX_PYTHON310</code>为已有Python 3.10解释器路径。脚本只在项目内准备<code>external/bgmat</code>及<code>.venv-bgmat</code>，按已保存的依赖锁文件安装，并验证源码和权重哈希。上游原始版本为JAX/JAXlib 0.4.32；本次固定这一作者版本，不声称已验证新版兼容性。</p><p>准备一个新的日志目录和结果路径，然后提交CPU推理：</p><pre class="bash"><code>run_tag=&quot;bgmat_$(date -u +%Y%m%dT%H%M%SZ)&quot;
+mkdir &quot;runs/${run_tag}_logs&quot;
+sbatch --parsable --partition=gpu \
+  --job-name=genx_bgmat_real --nodes=1 --ntasks=1 \
+  --cpus-per-task=2 --mem=8G --time=00:20:00 \
+  --no-requeue --open-mode=append --export=NONE \
+  --chdir=&quot;$PWD&quot; \
+  --output=&quot;$PWD/runs/${run_tag}_logs/slurm-%j.out&quot; \
+  --error=&quot;$PWD/runs/${run_tag}_logs/slurm-%j.err&quot; \
+  scripts/run_bgmat_cpu.sh --output &quot;runs/$run_tag&quot; --samples 8</code></pre><p>此命令不包含GPU GRES请求；运行器还显式设置<code>JAX_PLATFORMS=cpu</code>。如果集群不允许在GPU分区运行CPU作业，改成允许的CPU分区。必须从仓库根目录提交，输出路径不能已存在。更改种子可使用<code>--seed</code>；当前适配器只接受已验证的216粒子配置。</p><p>运行结束后同时检查<code>sacct</code>的终态和结果manifest。加载权重、开始运行或出现首个样本日志，都不单独代表整个流程完成。</p><pre class="bash"><code>sacct -j &lt;实际作业号&gt; --format=JobID,State,ExitCode,Elapsed -P
+python3 -m json.tool &quot;runs/$run_tag/manifest.json&quot;</code></pre><h2 id="版本与实现边界">4. 版本与实现边界</h2><p>源码来自<a href="https://github.com/maxschebek/bgmat">官方bgmat仓库</a>，固定提交<code>6e3db2b3453cb57eb16fdd2148c95ec35264faf4</code>。权重为作者的<code>params-mw_cubic_216.pkl</code>，SHA-256见manifest和源码常量。源码文件哈希另存<a href="../configs/bgmat_source_lock.json">bgmat_source_lock.json</a>，依赖见<a href="../configs/bgmat_requirements.lock.txt">锁文件</a>。</p><p>架构使用作者教程的96维embedding、16个局部邻居、10层耦合流。适配器调用上游<code>create_base</code>、<code>create_flow</code>和<code>_get_loss</code>；通过<code>hk.transform(...).apply</code>将真实预训练参数传入完整flow。参考分布是在晶格附近加噪的分布，生成后的坐标来自训练好的变换，不直接把这些初始噪声坐标作为结果。</p><p>主要工程适配：Slurm在spool目录执行脚本，项目路径改从<code>SLURM_SUBMIT_DIR</code>取得；计算节点不依赖Git，用预先固定的源码哈希校验；上游editable安装未暴露namespace包，显式加入已校验源码路径。这些处理不更改模型权重或物理势。</p><h2 id="调试记录和后续任务">5. 调试记录和后续任务</h2><p>96462在模型启动前因Slurm脚本路径失败；96471因计算节点无Git失败；96484取消以修正导入路径；96487因CPU分区排队取消，改由96496以CPU-only方式运行。失败和取消记录均保留，只有96496报告实际生成成功。</p><p>软件测试现共20项通过，涵盖原smoke接口、生成输出、输入边界、源码校验及Slurm spooled脚本路径。与运行结果相结合，它们证明工程闭环，不替代科研验收。</p><p>后续可在这个独立项目中增加样本、多个种子、RDF与高阶结构比较、权重收敛及尺寸迁移；另设非晶或全原子水项目。主动学习仍需要独立参考数据和触发准则，本示例没有自动训练生成器或势。</p>
+</article><aside class="toc" aria-label="本页章节"><details open><summary>本页章节</summary><ol><li class="level-h2"><a href="#%E7%94%9F%E6%88%90%E4%BA%86%E4%BB%80%E4%B9%88">1. 生成了什么</a></li><li class="level-h2"><a href="#%E6%95%B0%E6%8D%AE%E5%92%8C%E8%AF%81%E6%8D%AE">2. 数据和证据</a></li><li class="level-h2"><a href="#%E5%A6%82%E4%BD%95%E5%A4%8D%E8%B7%91">3. 如何复跑</a></li><li class="level-h2"><a href="#%E7%89%88%E6%9C%AC%E4%B8%8E%E5%AE%9E%E7%8E%B0%E8%BE%B9%E7%95%8C">4. 版本与实现边界</a></li><li class="level-h2"><a href="#%E8%B0%83%E8%AF%95%E8%AE%B0%E5%BD%95%E5%92%8C%E5%90%8E%E7%BB%AD%E4%BB%BB%E5%8A%A1">5. 调试记录和后续任务</a></li></ol></details></aside></div>
+    <section class="downloads" id="pdf-downloads" aria-labelledby="pdf-title"><h2 id="pdf-title">PDF 快照</h2><ul class="download-list"><li><a href="../reports/2026-10-22_generation/literature_survey.pdf">2026-10-22_generation/literature_survey.pdf</a><span>227 KB</span></li><li><a href="../reports/2026-10-22_generation/technical_roadmap.pdf">2026-10-22_generation/technical_roadmap.pdf</a><span>221 KB</span></li><li><a href="../reports/2026-10-22_generation/bgmat_cpu_generation.pdf">2026-10-22_generation/bgmat_cpu_generation.pdf</a><span>137 KB</span></li></ul></section>
+    <nav class="adjacent" aria-label="相邻页面"><a href="tutorial.html"><small>上一页</small><span>使用教程</span></a><a href="literature.html"><small>下一页</small><span>文献调研</span></a></nav>
+    <footer class="page-footer"><span>Gen_X 工程手册</span><span>Markdown 为内容源 · 本地资源 · MathML 公式</span><a href="#main">回到顶部</a></footer>
+  </main>
+  <span id="copy-status" class="visually-hidden" role="status"></span>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "command": [
+    "sbatch",
+    "--parsable",
+    "--partition=debug",
+    "--job-name=genx_bgmat_real",
+    "--nodes=1",
+    "--ntasks=1",
+    "--cpus-per-task=2",
+    "--mem=8G",
+    "--time=00:20:00",
+    "--no-requeue",
+    "--open-mode=append",
+    "--export=NONE",
+    "--chdir=/home/qiuyong/bza/H2O/Gen_X",
+    "--output=/home/qiuyong/bza/H2O/Gen_X/runs/bgmat_job_20261022/slurm-%j.out",
+    "--error=/home/qiuyong/bza/H2O/Gen_X/runs/bgmat_job_20261022/slurm-%j.err",
+    "scripts/run_bgmat_cpu.sh",
+    "--output",
+    "runs/bgmat_real_20261022",
+    "--samples",
+    "8"
+  ],
+  "job_id": "96487",
+  "submitted_utc": "2026-10-22T08:49:34.447277+00:00",
+  "sha256": {
+    "scripts/bgmat_inference.py": "92444d2e37c5aedcf458ba9c22bd3d884f484a2d6c2cba34a957676064a864c9",
+    "scripts/run_bgmat_cpu.sh": "798db910717552977c5ffef5e73fd7b0b55c44705b6a32c81be57ab5b8855a3c",
+    "configs/bgmat_source_lock.json": "062bbd7cbb2be1de29d80513ad18acb2d30762852cf8a7f3b7afb672d25b2f51"
+  }
+}

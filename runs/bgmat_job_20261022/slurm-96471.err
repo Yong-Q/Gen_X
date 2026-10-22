@@ -1,0 +1,15 @@
+Traceback (most recent call last):
+  File "/home/qiuyong/bza/H2O/Gen_X/scripts/bgmat_inference.py", line 200, in <module>
+    main()
+  File "/home/qiuyong/bza/H2O/Gen_X/scripts/bgmat_inference.py", line 182, in main
+    actual_commit=subprocess.check_output(['git','-C',str(ROOT/'external/bgmat'),'rev-parse','HEAD'],text=True).strip()
+  File "/home/qiuyong/.conda/envs/LiIonMl/lib/python3.10/subprocess.py", line 420, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+  File "/home/qiuyong/.conda/envs/LiIonMl/lib/python3.10/subprocess.py", line 501, in run
+    with Popen(*popenargs, **kwargs) as process:
+  File "/home/qiuyong/.conda/envs/LiIonMl/lib/python3.10/subprocess.py", line 966, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/home/qiuyong/.conda/envs/LiIonMl/lib/python3.10/subprocess.py", line 1842, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'git'
+srun: error: node04: task 0: Exited with exit code 1

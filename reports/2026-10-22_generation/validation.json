@@ -1,0 +1,20 @@
+[
+  {
+    "file": "literature_survey.pdf",
+    "pages": 6,
+    "out_of_page": [],
+    "sha256": "85fee2d495ec09895b890646e232aa739a19b1c627a5a8fa28a3df5577716282"
+  },
+  {
+    "file": "technical_roadmap.pdf",
+    "pages": 7,
+    "out_of_page": [],
+    "sha256": "feb0fc125fa6ea7cdfe6bbe7dc48cd70d2693692279f534c8b86ef975a08158b"
+  },
+  {
+    "file": "bgmat_cpu_generation.pdf",
+    "pages": 3,
+    "out_of_page": [],
+    "sha256": "d4fdfd2fd4624c9e5c640901bf7096006e18b20a6a617eb9cfcea7df03904060"
+  }
+]

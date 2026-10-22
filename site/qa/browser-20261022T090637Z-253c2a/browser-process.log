@@ -1,0 +1,10 @@
+*** You are running in headless mode.
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.472534) [GFX1-]: glxtest: Unable to open a connection to the X server
+WebDriver BiDi listening on ws://127.0.0.1:9237
+1792659998701	RemoteAgent	INFO	Perform WebSocket upgrade for incoming connection from 127.0.0.1:60148
+JavaScript error: chrome://remote/content/shared/messagehandler/transports/js-window-actors/MessageHandlerFrameChild.sys.mjs, line 96: InvalidStateError: JSWindowActorChild.sendQuery: JSWindowActorChild cannot send at the moment
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.

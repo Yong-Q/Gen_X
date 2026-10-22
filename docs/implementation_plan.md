@@ -1,5 +1,7 @@
 # Gen_X Implementation Plan
 
+Historical plan for the completed synthetic CPU-smoke stage. The subsequently authorized real pretrained generation work is documented in [real_generation_plan.md](real_generation_plan.md) and [real_generation_results.md](real_generation_results.md).
+
 > **For agentic workers:** Use superpowers:subagent-driven-development or superpowers:executing-plans. Follow the explicit user scope: Bash/Slurm smoke only; no GPU compute.
 
 **Goal:** Deliver literature survey and technical roadmap PDFs plus reproducible CPU-only Bash/Slurm smoke with a clearly labelled feedback-queue demonstration.

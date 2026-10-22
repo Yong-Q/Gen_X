@@ -1,0 +1,13 @@
+{
+  "job_id": "96487",
+  "command": [
+    "scontrol",
+    "update",
+    "JobId=96487",
+    "Partition=gpu"
+  ],
+  "reason": "debug CPU nodes fully allocated; use idle CPU allocation on GPU partition without requesting any GPU",
+  "gpu_requested": 0,
+  "backend": "cpu",
+  "timestamp": "2026-10-22T08:52:49.260111+00:00"
+}

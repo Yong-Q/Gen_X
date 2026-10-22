@@ -1,0 +1,10 @@
+{"stage": "checkpoint_loaded", "parameter_count": 7972860, "devices": ["TFRT_CPU_0"]}
+{"stage": "sample_generated", "sample": 0, "seconds": 21.372701057698578, "energy_kcal_per_mol": -2536.8667543013153}
+{"stage": "sample_generated", "sample": 1, "seconds": 2.111620220821351, "energy_kcal_per_mol": -2541.353588776563}
+{"stage": "sample_generated", "sample": 2, "seconds": 2.1103902459144592, "energy_kcal_per_mol": -2535.7660538753225}
+{"stage": "sample_generated", "sample": 3, "seconds": 2.1223469376564026, "energy_kcal_per_mol": -2540.5408786516064}
+{"stage": "sample_generated", "sample": 4, "seconds": 2.121050980873406, "energy_kcal_per_mol": -2544.551414808314}
+{"stage": "sample_generated", "sample": 5, "seconds": 2.1380798406898975, "energy_kcal_per_mol": -2545.349184499757}
+{"stage": "sample_generated", "sample": 6, "seconds": 2.125329584348947, "energy_kcal_per_mol": -2550.3067935287904}
+{"stage": "sample_generated", "sample": 7, "seconds": 2.1249301210045815, "energy_kcal_per_mol": -2547.665128849293}
+{"stage": "completed", "output": "/home/qiuyong/bza/H2O/Gen_X/runs/bgmat_real_20261022", "ess_samples": 3.5270581124920612}

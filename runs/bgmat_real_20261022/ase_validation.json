@@ -1,0 +1,7 @@
+{
+  "ase_frames": 8,
+  "particles_each": 216,
+  "positions_match_npz": true,
+  "periodic_cells_match": true,
+  "coarse_grained_label_retained": true
+}

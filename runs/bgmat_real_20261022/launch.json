@@ -1,0 +1,19 @@
+{
+  "started_utc": "2026-10-22T08:53:17.641095+00:00",
+  "upstream": "https://github.com/maxschebek/bgmat",
+  "upstream_commit": "6e3db2b3453cb57eb16fdd2148c95ec35264faf4",
+  "checkpoint_sha256": "89d03c7ae3980421f313b0495b89d92a9f107804f4d936fcd99b34dd4cb294ba",
+  "script_sha256": "92444d2e37c5aedcf458ba9c22bd3d884f484a2d6c2cba34a957676064a864c9",
+  "command": [
+    "/home/qiuyong/bza/H2O/Gen_X/scripts/bgmat_inference.py",
+    "--output",
+    "runs/bgmat_real_20261022",
+    "--samples",
+    "8"
+  ],
+  "seed": 20261022,
+  "slurm_job_id": "96496",
+  "hostname": "gpu.hpc.local",
+  "slurm_cpus_per_task": "2",
+  "backend": "cpu"
+}

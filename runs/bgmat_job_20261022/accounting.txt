@@ -1,0 +1,15 @@
+JobID|JobName|Partition|State|ExitCode|Elapsed|AllocCPUS|ReqMem|MaxRSS|ReqTRES|AllocTRES
+96462|genx_bgmat_real|debug|FAILED|2:0|00:00:05|2|8G||billing=2,cpu=2,mem=8G,node=1|billing=2,cpu=2,mem=8G,node=1
+96462.batch|batch||FAILED|2:0|00:00:05|2||10780K||cpu=2,mem=8G,node=1
+96462.extern|extern||COMPLETED|0:0|00:00:05|2||||billing=2,cpu=2,mem=8G,node=1
+96462.0|python||FAILED|2:0|00:00:00|2||1232K||cpu=2,mem=8G,node=1
+96471|genx_bgmat_real|debug|FAILED|1:0|00:00:06|2|8G||billing=2,cpu=2,mem=8G,node=1|billing=2,cpu=2,mem=8G,node=1
+96471.batch|batch||FAILED|1:0|00:00:06|2||10548K||cpu=2,mem=8G,node=1
+96471.extern|extern||COMPLETED|0:0|00:00:06|2||||billing=2,cpu=2,mem=8G,node=1
+96471.0|python||FAILED|1:0|00:00:01|2||7332K||cpu=2,mem=8G,node=1
+96484|genx_bgmat_real|debug|CANCELLED by 1010|0:0|00:00:00|0|8G||billing=2,cpu=2,mem=8G,node=1|
+96487|genx_bgmat_real|debug|CANCELLED by 1010|0:0|00:00:00|0|8G||billing=2,cpu=2,mem=8G,node=1|
+96496|genx_bgmat_real|gpu|COMPLETED|0:0|00:01:27|2|8G||billing=2,cpu=2,mem=8G,node=1|billing=2,cpu=2,mem=8G,node=1
+96496.batch|batch||COMPLETED|0:0|00:01:27|2||7636K||cpu=2,mem=8G,node=1
+96496.extern|extern||COMPLETED|0:0|00:01:28|2||||billing=2,cpu=2,mem=8G,node=1
+96496.0|python||COMPLETED|0:0|00:01:22|2||1202832K||cpu=2,mem=8G,node=1

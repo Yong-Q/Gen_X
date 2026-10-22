@@ -1,0 +1,2 @@
+[2026-10-22T08:43:38.402] error: execve(): /var/spool/slurmd/.venv-bgmat/bin/python: No such file or directory
+srun: error: node04: task 0: Exited with exit code 2
