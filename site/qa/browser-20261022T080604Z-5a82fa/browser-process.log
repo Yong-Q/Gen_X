@@ -1,0 +1,10 @@
+*** You are running in headless mode.
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: Unable to open a connection to the X server (t=0.480236) [GFX1-]: glxtest: Unable to open a connection to the X server
+WebDriver BiDi listening on ws://127.0.0.1:9237
+1792656365248	RemoteAgent	INFO	Perform WebSocket upgrade for incoming connection from 127.0.0.1:49872
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Crash Annotation GraphicsCriticalError: |[C0][GFX1-]: CompositorBridgeChild receives IPC close with reason=AbnormalShutdown (t=0Crash Annotation GraphicsCriticalError: |[C0][GFX1-]: CompositorBridgeChild receives IPC close with reason=AbnormalShutdown (t=0Crash Annotation GraphicsCriticalError: |[C0][GFX1-]: CompositorBridgeChild receives IPC close with reason=AbnormalShutdown (t=0.904346) Exiting due to channel error.
+Crash Annotation GraphicsCriticalError: |[C0][GFX1-]: CompositorBridgeChild receives IPC close with reason=AbnormalShutdown (t=1.95279) 

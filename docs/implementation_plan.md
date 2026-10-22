@@ -30,23 +30,29 @@
 
 Own scripts/, configs/, tests/, examples/, runs/ and docs/smoke_results.md.
 
-- [ ] Write meaningful failure tests for route/config validation, output collision, path quoting and failure propagation; record initial failure.
-- [ ] Implement route configs, local smoke launcher and Slurm submit launcher with dry-run support.
-- [ ] Implement synthetic QA-to-candidate-queue demo with provenance on every sample.
-- [ ] Run local smoke and tests; save exact commands and results.
-- [ ] Submit CPU-only Slurm smoke if available, monitor completion, and save job metadata/logs.
-- [ ] Report executed vs unexecuted stages without claiming scientific success.
+- [x] Write meaningful failure tests for route/config validation, output collision, path quoting and failure propagation; record initial failure.
+- [x] Implement route configs, local smoke launcher and Slurm submit launcher with dry-run support.
+- [x] Implement synthetic QA-to-candidate-queue demo with provenance on every sample.
+- [x] Run local smoke and tests; save exact commands and results.
+- [x] Submit CPU-only Slurm smoke if available, monitor completion, and save job metadata/logs.
+- [x] Report executed vs unexecuted stages without claiming scientific success.
 
 ## Task 2: Literature and technical route
 
-- [ ] Write docs/literature_survey.md with primary sources, release status, input/output, scale evidence and code availability.
-- [ ] Write docs/technical_roadmap.md with model family selection, staged milestones, data contracts, ensemble validation and two feedback loops.
-- [ ] Include actual environment observations and smoke outcome after Task 1.
-- [ ] Render both documents to PDF and inspect pagination, text extraction and links.
+- [x] Write docs/literature_survey.md with primary sources, release status, input/output, scale evidence and code availability.
+- [x] Write docs/technical_roadmap.md with model family selection, staged milestones, data contracts, ensemble validation and two feedback loops.
+- [x] Include actual environment observations and smoke outcome after Task 1.
+- [x] Render both documents to PDF and inspect pagination, text extraction and links.
 
 ## Task 3: Independent review and repository sync
 
-- [ ] Review scientific claims, execution boundary, quoting/no-overwrite behavior and Slurm correctness.
-- [ ] Address material findings and rerun affected checks.
+- [x] Review scientific claims, execution boundary, quoting/no-overwrite behavior and Slurm correctness.
+- [x] Address material findings and rerun affected checks.
 - [ ] Commit only task-owned sources, PDFs and small run evidence; push to user-authorized repository.
 - [ ] Verify remote commit and report links plus remaining scientific milestones.
+
+## HTML documentation extension
+
+- [x] Pull and pin official project-local doc-coauthoring and frontend-design skills.
+- [x] Build six offline tutorial/documentation pages from Markdown, with navigation and MathML.
+- [x] Validate desktop/mobile behavior and local links; preserve source and review evidence.

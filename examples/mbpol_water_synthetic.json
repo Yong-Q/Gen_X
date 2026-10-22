@@ -1,0 +1,9 @@
+{
+  "synthetic": true,
+  "provenance": "Gen_X hand-authored synthetic O/H coordinate fixture for software testing; not DNN@MB-pol output, validated water geometry, or a thermodynamic ensemble",
+  "samples": [
+    {"id": "water_separated_demo", "species": ["O", "H", "H", "O", "H", "H"], "cell_A": [10, 10, 10], "positions_A": [[2, 2, 2], [2.96, 2, 2], [1.76, 2.93, 2], [6, 6, 6], [6.96, 6, 6], [5.76, 6.93, 6]]},
+    {"id": "water_overlap_demo", "species": ["O", "H", "H", "O", "H", "H"], "cell_A": [10, 10, 10], "positions_A": [[2, 2, 2], [2.96, 2, 2], [1.76, 2.93, 2], [2.1, 2, 2], [6.96, 6, 6], [5.76, 6.93, 6]]},
+    {"id": "water_outside_cell_demo", "species": ["O", "H", "H"], "cell_A": [10, 10, 10], "positions_A": [[-1, 2, 2], [-0.04, 2, 2], [-1.24, 2.93, 2]]}
+  ]
+}

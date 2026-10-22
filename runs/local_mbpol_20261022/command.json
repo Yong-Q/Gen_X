@@ -1,0 +1,10 @@
+{
+  "argv": [
+    "/usr/bin/python3",
+    "/home/qiuyong/bza/H2O/Gen_X/scripts/smoke.py",
+    "worker",
+    "--run-dir",
+    "/home/qiuyong/bza/H2O/Gen_X/runs/local_mbpol_20261022"
+  ],
+  "shell": false
+}

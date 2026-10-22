@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "route_id": "dm2_amorphous",
+  "mode": "synthetic_smoke",
+  "source_url": "https://github.com/digital-synthesis-lab/DM2",
+  "model_role": "amorphous_structure_generator",
+  "model_status": "not_integrated",
+  "upstream_entrypoint": "DM2 upstream README and sampling workflow; exact inference command/version must be pinned before integration",
+  "prerequisites": [
+    "Review and pin an upstream source revision and license",
+    "Install an isolated supported upstream environment in an authorized later stage",
+    "Obtain compatible pretrained weights and training-data/conditioning metadata with hashes",
+    "Define composition, cell, units, atom ordering and periodic-boundary contracts"
+  ],
+  "fixture": "../examples/dm2_synthetic.json",
+  "qa": {"min_pair_distance_A": 0.7},
+  "qa_scope": "Illustrative overlap threshold only; no energy, force, uncertainty or equilibrium validation"
+}

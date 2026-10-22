@@ -1,0 +1,9 @@
+{
+  "synthetic": true,
+  "provenance": "Gen_X hand-authored synthetic silicon coordinate fixture for software testing; not DM2 output, MD/DFT data, or a physical amorphous structure",
+  "samples": [
+    {"id": "si_separated_demo", "species": ["Si", "Si", "Si"], "cell_A": [10, 10, 10], "positions_A": [[1, 1, 1], [4, 4, 4], [7, 7, 7]]},
+    {"id": "si_periodic_overlap_demo", "species": ["Si", "Si"], "cell_A": [10, 10, 10], "positions_A": [[0.1, 1, 1], [9.9, 1, 1]]},
+    {"id": "si_outside_cell_demo", "species": ["Si", "Si"], "cell_A": [10, 10, 10], "positions_A": [[-1, 1, 1], [4, 4, 4]]}
+  ]
+}

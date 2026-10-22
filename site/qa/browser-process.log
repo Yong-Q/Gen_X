@@ -1,0 +1,13 @@
+*** You are running in headless mode.
+Crash Annotation GraphicsCriticalError: |[0][GFX1-]: glxtest: Unable to open a connection to the X server (t=2.49691) [GFX1-]: glxtest: Unable to open a connection to the X server
+WebDriver BiDi listening on ws://127.0.0.1:9237
+1792656267039	RemoteAgent	INFO	Perform WebSocket upgrade for incoming connection from 127.0.0.1:44630
+JavaScript error: chrome://remote/content/shared/messagehandler/transports/js-window-actors/MessageHandlerFrameChild.sys.mjs, line 96: InvalidStateError: JSWindowActorChild.sendQuery: JSWindowActorChild cannot send at the moment
+JavaScript error: chrome://remote/content/shared/messagehandler/transports/js-window-actors/MessageHandlerFrameChild.sys.mjs, line 96: InvalidStateError: JSWindowActorChild.sendQuery: JSWindowActorChild cannot send at the moment
+JavaScript error: chrome://remote/content/shared/messagehandler/transports/js-window-actors/MessageHandlerFrameChild.sys.mjs, line 96: InvalidStateError: JSWindowActorChild.sendQuery: JSWindowActorChild cannot send at the moment
+JavaScript error: chrome://remote/content/shared/messagehandler/transports/js-window-actors/MessageHandlerFrameChild.sys.mjs, line 96: InvalidStateError: JSWindowActorChild.sendQuery: JSWindowActorChild cannot send at the moment
+Exiting due to channel error.
+Exiting due to channel error.
+Exiting due to channel error.
+Crash Annotation GraphicsCriticalError: |[C0][GFX1-]: CompositorBridgeChild receives IPC close with reason=AbnormalShutdown (t=1.06673) Exiting due to channel error.
+Crash Annotation GraphicsCriticalError: |[C0][GFX1-]: CompositorBridgeChild receives IPC close with reason=AbnormalShutdown (t=1.15474) Exiting due to channel error.

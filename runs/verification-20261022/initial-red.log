@@ -1,0 +1,102 @@
+test_dry_run_validates_but_creates_no_results (test_smoke.SmokeTests.test_dry_run_validates_but_creates_no_results) ... FAIL
+test_duplicate_run_refused_without_altering_results (test_smoke.SmokeTests.test_duplicate_run_refused_without_altering_results) ... FAIL
+test_missing_required_metadata_rejected (test_smoke.SmokeTests.test_missing_required_metadata_rejected) ... FAIL
+test_paths_with_spaces_and_periodic_qa_are_preserved (test_smoke.SmokeTests.test_paths_with_spaces_and_periodic_qa_are_preserved) ... FAIL
+test_run_id_traversal_rejected (test_smoke.SmokeTests.test_run_id_traversal_rejected) ... ok
+test_sbatch_failure_propagates_and_records_failure (test_smoke.SmokeTests.test_sbatch_failure_propagates_and_records_failure) ... FAIL
+test_scientific_execution_mode_rejected (test_smoke.SmokeTests.test_scientific_execution_mode_rejected) ... FAIL
+test_slurm_dry_run_has_only_small_cpu_request (test_smoke.SmokeTests.test_slurm_dry_run_has_only_small_cpu_request) ... FAIL
+test_unknown_route_rejected_before_run_creation (test_smoke.SmokeTests.test_unknown_route_rejected_before_run_creation) ... FAIL
+test_worker_subprocess_failure_cannot_be_success (test_smoke.SmokeTests.test_worker_subprocess_failure_cannot_be_success) ... ERROR
+
+======================================================================
+ERROR: test_worker_subprocess_failure_cannot_be_success (test_smoke.SmokeTests.test_worker_subprocess_failure_cannot_be_success)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/qiuyong/bza/H2O/Gen_X/tests/test_smoke.py", line 90, in test_worker_subprocess_failure_cannot_be_success
+    manifest = self.read_manifest()
+               ^^^^^^^^^^^^^^^^^^^^
+  File "/home/qiuyong/bza/H2O/Gen_X/tests/test_smoke.py", line 43, in read_manifest
+    return json.loads((self.output / "test_run" / "manifest.json").read_text())
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/pathlib.py", line 1027, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/qiuyong/bza/H2O/Gen_X/tests/smoke test bt8pm2s6/output with spaces/test_run/manifest.json'
+
+======================================================================
+FAIL: test_dry_run_validates_but_creates_no_results (test_smoke.SmokeTests.test_dry_run_validates_but_creates_no_results)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/qiuyong/bza/H2O/Gen_X/tests/test_smoke.py", line 97, in test_dry_run_validates_but_creates_no_results
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 127 != 0 : bash: /home/qiuyong/bza/H2O/Gen_X/scripts/local_smoke.sh: No such file or directory
+
+
+======================================================================
+FAIL: test_duplicate_run_refused_without_altering_results (test_smoke.SmokeTests.test_duplicate_run_refused_without_altering_results)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/qiuyong/bza/H2O/Gen_X/tests/test_smoke.py", line 79, in test_duplicate_run_refused_without_altering_results
+    self.assertEqual(first.returncode, 0, first.stderr)
+AssertionError: 127 != 0 : bash: /home/qiuyong/bza/H2O/Gen_X/scripts/local_smoke.sh: No such file or directory
+
+
+======================================================================
+FAIL: test_missing_required_metadata_rejected (test_smoke.SmokeTests.test_missing_required_metadata_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/qiuyong/bza/H2O/Gen_X/tests/test_smoke.py", line 58, in test_missing_required_metadata_rejected
+    self.assertIn("prerequisites", result.stderr)
+AssertionError: 'prerequisites' not found in 'bash: /home/qiuyong/bza/H2O/Gen_X/scripts/local_smoke.sh: No such file or directory\n'
+
+======================================================================
+FAIL: test_paths_with_spaces_and_periodic_qa_are_preserved (test_smoke.SmokeTests.test_paths_with_spaces_and_periodic_qa_are_preserved)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/qiuyong/bza/H2O/Gen_X/tests/test_smoke.py", line 63, in test_paths_with_spaces_and_periodic_qa_are_preserved
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 127 != 0 : bash: /home/qiuyong/bza/H2O/Gen_X/scripts/local_smoke.sh: No such file or directory
+
+
+======================================================================
+FAIL: test_sbatch_failure_propagates_and_records_failure (test_smoke.SmokeTests.test_sbatch_failure_propagates_and_records_failure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/qiuyong/bza/H2O/Gen_X/tests/test_smoke.py", line 120, in test_sbatch_failure_propagates_and_records_failure
+    self.assertEqual(result.returncode, 17, result.stderr)
+AssertionError: 127 != 17 : bash: /home/qiuyong/bza/H2O/Gen_X/scripts/submit_smoke.sh: No such file or directory
+
+
+======================================================================
+FAIL: test_scientific_execution_mode_rejected (test_smoke.SmokeTests.test_scientific_execution_mode_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/qiuyong/bza/H2O/Gen_X/tests/test_smoke.py", line 134, in test_scientific_execution_mode_rejected
+    self.assertIn("synthetic_smoke", result.stderr)
+AssertionError: 'synthetic_smoke' not found in 'bash: /home/qiuyong/bza/H2O/Gen_X/scripts/local_smoke.sh: No such file or directory\n'
+
+======================================================================
+FAIL: test_slurm_dry_run_has_only_small_cpu_request (test_smoke.SmokeTests.test_slurm_dry_run_has_only_small_cpu_request)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/qiuyong/bza/H2O/Gen_X/tests/test_smoke.py", line 103, in test_slurm_dry_run_has_only_small_cpu_request
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 127 != 0 : bash: /home/qiuyong/bza/H2O/Gen_X/scripts/submit_smoke.sh: No such file or directory
+
+
+======================================================================
+FAIL: test_unknown_route_rejected_before_run_creation (test_smoke.SmokeTests.test_unknown_route_rejected_before_run_creation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/qiuyong/bza/H2O/Gen_X/tests/test_smoke.py", line 50, in test_unknown_route_rejected_before_run_creation
+    self.assertIn("unknown route", result.stderr.lower())
+AssertionError: 'unknown route' not found in 'bash: /home/qiuyong/bza/h2o/gen_x/scripts/local_smoke.sh: no such file or directory\n'
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.052s
+
+FAILED (failures=8, errors=1)

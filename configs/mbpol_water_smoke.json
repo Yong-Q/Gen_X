@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "route_id": "mbpol_water",
+  "mode": "synthetic_smoke",
+  "source_url": "https://github.com/paesanilab/Quantum-phase-diagram-of-water",
+  "publication_url": "https://doi.org/10.1038/s41567-024-02761-0",
+  "checkpoint_url": "https://raw.githubusercontent.com/paesanilab/Quantum-phase-diagram-of-water/main/Model/GraphFiles/graph-compress.pb",
+  "model_role": "DNN@MB-pol_potential_teacher_for_future_all_atom_generator",
+  "model_status": "not_integrated",
+  "upstream_entrypoint": "LAMMPS with a compatible DeePMD runtime for potential inference; a separate all-atom generator is not implemented",
+  "prerequisites": [
+    "Pin source revision, model license and checkpoint hash before use",
+    "Verify a compatible LAMMPS/DeePMD runtime and the upstream example input",
+    "Validate species order, units, energy and forces on held-out water configurations",
+    "Select and implement a separate generator; the potential itself does not generate independent samples"
+  ],
+  "fixture": "../examples/mbpol_water_synthetic.json",
+  "qa": {"min_pair_distance_A": 0.7},
+  "qa_scope": "Illustrative geometry only; no DNN@MB-pol, energy, force or physical validation is executed"
+}

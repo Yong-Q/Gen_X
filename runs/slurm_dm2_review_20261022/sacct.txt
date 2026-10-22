@@ -1,0 +1,4 @@
+JobID|JobName|Partition|AllocCPUS|ReqMem|Elapsed|State|ExitCode|NodeList|ReqTRES|AllocTRES
+96390|genx_cpu_smoke|debug|1|128M|00:00:04|COMPLETED|0:0|node04|billing=1,cpu=1,mem=128M,node=1|billing=1,cpu=1,mem=128M,node=1
+96390.batch|batch||1||00:00:04|COMPLETED|0:0|node04||cpu=1,mem=128M,node=1
+96390.extern|extern||1||00:00:04|COMPLETED|0:0|node04||billing=1,cpu=1,mem=128M,node=1

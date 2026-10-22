@@ -1,0 +1,207 @@
+{
+  "status": "passed",
+  "browser": "140.17.0",
+  "checked_utc": "2026-10-22T08:06:07.249735+00:00",
+  "url_mode": "file://",
+  "checks": [
+    {
+      "width": 1440,
+      "documentWidth": 1428,
+      "title": "项目概览 | Gen_X 工程手册",
+      "h1": 1,
+      "active": "index.html",
+      "copyButtons": 2,
+      "math": 0,
+      "tableWrappers": 0,
+      "navHidden": false,
+      "page": "index",
+      "viewport": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "width": 1440,
+      "documentWidth": 1428,
+      "title": "使用教程 | Gen_X 工程手册",
+      "h1": 1,
+      "active": "tutorial.html",
+      "copyButtons": 11,
+      "math": 1,
+      "tableWrappers": 4,
+      "navHidden": false,
+      "page": "tutorial",
+      "viewport": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "width": 1440,
+      "documentWidth": 1428,
+      "title": "文献调研 | Gen_X 工程手册",
+      "h1": 1,
+      "active": "literature.html",
+      "copyButtons": 0,
+      "math": 6,
+      "tableWrappers": 3,
+      "navHidden": false,
+      "page": "literature",
+      "viewport": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "width": 1440,
+      "documentWidth": 1428,
+      "title": "技术路线 | Gen_X 工程手册",
+      "h1": 1,
+      "active": "roadmap.html",
+      "copyButtons": 0,
+      "math": 13,
+      "tableWrappers": 4,
+      "navHidden": false,
+      "page": "roadmap",
+      "viewport": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "width": 1440,
+      "documentWidth": 1428,
+      "title": "势与环境 | Gen_X 工程手册",
+      "h1": 1,
+      "active": "environment.html",
+      "copyButtons": 0,
+      "math": 0,
+      "tableWrappers": 2,
+      "navHidden": false,
+      "page": "environment",
+      "viewport": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "width": 1440,
+      "documentWidth": 1428,
+      "title": "执行证据 | Gen_X 工程手册",
+      "h1": 1,
+      "active": "evidence.html",
+      "copyButtons": 4,
+      "math": 0,
+      "tableWrappers": 3,
+      "navHidden": false,
+      "page": "evidence",
+      "viewport": [
+        1440,
+        1000
+      ]
+    },
+    {
+      "width": 390,
+      "documentWidth": 378,
+      "title": "项目概览 | Gen_X 工程手册",
+      "h1": 1,
+      "active": "index.html",
+      "copyButtons": 2,
+      "math": 0,
+      "tableWrappers": 0,
+      "navHidden": true,
+      "page": "index",
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    {
+      "width": 390,
+      "documentWidth": 378,
+      "title": "使用教程 | Gen_X 工程手册",
+      "h1": 1,
+      "active": "tutorial.html",
+      "copyButtons": 11,
+      "math": 1,
+      "tableWrappers": 4,
+      "navHidden": true,
+      "page": "tutorial",
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    {
+      "width": 390,
+      "documentWidth": 378,
+      "title": "文献调研 | Gen_X 工程手册",
+      "h1": 1,
+      "active": "literature.html",
+      "copyButtons": 0,
+      "math": 6,
+      "tableWrappers": 3,
+      "navHidden": true,
+      "page": "literature",
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    {
+      "width": 390,
+      "documentWidth": 378,
+      "title": "技术路线 | Gen_X 工程手册",
+      "h1": 1,
+      "active": "roadmap.html",
+      "copyButtons": 0,
+      "math": 13,
+      "tableWrappers": 4,
+      "navHidden": true,
+      "page": "roadmap",
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    {
+      "width": 390,
+      "documentWidth": 378,
+      "title": "势与环境 | Gen_X 工程手册",
+      "h1": 1,
+      "active": "environment.html",
+      "copyButtons": 0,
+      "math": 0,
+      "tableWrappers": 2,
+      "navHidden": true,
+      "page": "environment",
+      "viewport": [
+        390,
+        844
+      ]
+    },
+    {
+      "width": 390,
+      "documentWidth": 378,
+      "title": "执行证据 | Gen_X 工程手册",
+      "h1": 1,
+      "active": "evidence.html",
+      "copyButtons": 4,
+      "math": 0,
+      "tableWrappers": 3,
+      "navHidden": true,
+      "page": "evidence",
+      "viewport": [
+        390,
+        844
+      ]
+    }
+  ],
+  "console_errors": [],
+  "interactions": [
+    "heading search returns matching links",
+    "mobile menu opens and Escape closes it",
+    "copy button handler runs without errors; clipboard permission may require manual fallback"
+  ],
+  "scope": "Six pages at desktop and mobile widths; no page overflow, active nav, MathML presence, local JS, menu/search/copy handler checks. Not scientific validation."
+}

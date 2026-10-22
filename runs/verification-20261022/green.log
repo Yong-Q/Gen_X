@@ -1,0 +1,15 @@
+test_dry_run_validates_but_creates_no_results (test_smoke.SmokeTests.test_dry_run_validates_but_creates_no_results) ... ok
+test_duplicate_run_refused_without_altering_results (test_smoke.SmokeTests.test_duplicate_run_refused_without_altering_results) ... ok
+test_missing_required_metadata_rejected (test_smoke.SmokeTests.test_missing_required_metadata_rejected) ... ok
+test_paths_with_spaces_and_periodic_qa_are_preserved (test_smoke.SmokeTests.test_paths_with_spaces_and_periodic_qa_are_preserved) ... ok
+test_run_id_traversal_rejected (test_smoke.SmokeTests.test_run_id_traversal_rejected) ... ok
+test_sbatch_failure_propagates_and_records_failure (test_smoke.SmokeTests.test_sbatch_failure_propagates_and_records_failure) ... ok
+test_scientific_execution_mode_rejected (test_smoke.SmokeTests.test_scientific_execution_mode_rejected) ... ok
+test_slurm_dry_run_has_only_small_cpu_request (test_smoke.SmokeTests.test_slurm_dry_run_has_only_small_cpu_request) ... ok
+test_unknown_route_rejected_before_run_creation (test_smoke.SmokeTests.test_unknown_route_rejected_before_run_creation) ... ok
+test_worker_subprocess_failure_cannot_be_success (test_smoke.SmokeTests.test_worker_subprocess_failure_cannot_be_success) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.644s
+
+OK

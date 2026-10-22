@@ -1,0 +1,17 @@
+{
+  "config_sha256": "836574e9600d43d8e4fc51df51b71f67670822f203fd46bc35b9acd23a9cde2d",
+  "config_source": "/home/qiuyong/bza/H2O/Gen_X/configs/mbpol_water_smoke.json",
+  "created_utc": "2026-10-22T07:59:37.272920+00:00",
+  "execution": "local",
+  "fixture_sha256": "e645103414d679dc58e49080d388e5c960fe8aeed71a3f152da08be61020655a",
+  "fixture_source": "/home/qiuyong/bza/H2O/Gen_X/examples/mbpol_water_synthetic.json",
+  "model_inference": "not_run",
+  "python_submit": "3.12.15 (main, Oct  1 2026, 00:00:00) [GCC 14.3.1 20251022 (Red Hat 14.3.1-4)]",
+  "resolved_config_sha256": "40aca6b446e67f3ff69137cb72c795e06304e06eb77d38afdcd54a23f627454e",
+  "route_id": "mbpol_water",
+  "run_id": "local_mbpol_review_20261022",
+  "schema_version": 1,
+  "scientific_validation": "not_run",
+  "script_sha256": "7fbcdbb654014889c910bc65f5d2388a7e9076405a66b5bba97a823164a89069",
+  "synthetic": true
+}

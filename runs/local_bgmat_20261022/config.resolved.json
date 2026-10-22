@@ -1,0 +1,20 @@
+{
+  "fixture": "fixture.input.json",
+  "mode": "synthetic_smoke",
+  "model_role": "single_bead_water_ice_boltzmann_generator",
+  "model_status": "not_integrated",
+  "prerequisites": [
+    "Review and pin upstream source revision, license and model system",
+    "Install upstream dependencies in an authorized later stage",
+    "Obtain compatible weights and specify temperature, density, ensemble and particle count",
+    "Preserve the single-bead representation; do not relabel samples as all-atom water"
+  ],
+  "qa": {
+    "min_pair_distance_A": 0.7
+  },
+  "qa_scope": "Illustrative bead-overlap check only; no Boltzmann weights or distribution validation",
+  "route_id": "bgmat_water",
+  "schema_version": 1,
+  "source_url": "https://github.com/maxschebek/bgmat",
+  "upstream_entrypoint": "bgmat upstream README and examples; exact model-specific sampling command/version must be pinned before integration"
+}

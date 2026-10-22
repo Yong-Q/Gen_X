@@ -9,5 +9,13 @@ __pycache__/
 reports/build/
 *.aux
 *.out
+!runs/**/*.out
 *.toc
+# Local PDF build diagnostics and superseded visual drafts are retained locally.
+/reports/2026-10-22_v1/
+/reports/2026-10-22_v2/
+/reports/2026-10-22_v3/
+/reports/2026-10-22_v4/
+/reports/2026-10-22_final/
+/reports/2026-10-22_release/
 

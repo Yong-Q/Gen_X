@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "html_pages": 6,
+  "checked_local_links": 206,
+  "mathml_elements": 20,
+  "external_runtime_assets": 0,
+  "errors": [],
+  "scope": "Static local target/fragment, duplicate ID, MathML and external asset checks; not a browser test",
+  "sources_sha256": {
+    "README.md": "f7ac35233ce1551b07ca8e9c9d8b5889a15629248f5258813f3a903a043a63af",
+    "docs/tutorial.md": "66f4939dfe08606ab7d83c601956aa7b611f5939db3008865f1c1c770ff52eb2",
+    "docs/literature_survey.md": "1500bb45dbe4a1246e74ace8d5d06477784705c8d5040e7ef5c5bc8644492339",
+    "docs/technical_roadmap.md": "7c8f74a87c90c039e335faa382b42653ac5d2b5cf6e1110dfa525ed5c6d02cb8",
+    "docs/potentials_and_environment.md": "6fd467d095da1db6a738b90d31871b986169d336466931a446a71298a4d29d73",
+    "docs/smoke_results.md": "fc507ed775e06dc09f85856ed6e6b7f90425e19a4057cdff7344f2e8f74ed02f"
+  },
+  "built_utc": "2026-10-22T08:19:33.711307+00:00",
+  "builder_sha256": "f5ce95bf8723833a2dcd1949fc59bfc78e87086727f02cdb6633d97e24ea19e1"
+}

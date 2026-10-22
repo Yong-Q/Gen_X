@@ -1,0 +1,5 @@
+{
+  "existing_snapshot_refused": true,
+  "existing_log_preserved": true,
+  "symlink_escape_refused": true
+}

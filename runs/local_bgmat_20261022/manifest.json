@@ -1,0 +1,32 @@
+{
+  "artifact_sha256": {
+    "candidates.jsonl": "f6c1a1aa6d9f36aee1c011a15cfc677ead929eb657e3c7b69cf89853d131b626",
+    "qa.jsonl": "3d00b5adad1798d7860cb13c6d5130f57c12bca81c7a4224072b1cadcc8c050f"
+  },
+  "config_sha256": "8454a61f32f11d35be2e80c15fae25fbb407943300809ab9875f33f06287275a",
+  "config_source": "/home/qiuyong/bza/H2O/Gen_X/configs/bgmat_smoke.json",
+  "created_utc": "2026-10-22T07:50:14.615540+00:00",
+  "execution": "local",
+  "exit_code": 0,
+  "finished_utc": "2026-10-22T07:50:14.653192+00:00",
+  "fixture_sha256": "7637a539426652840d3148548061636064733d4194d3f8a1da377ca1be06bf45",
+  "fixture_source": "/home/qiuyong/bza/H2O/Gen_X/examples/bgmat_synthetic.json",
+  "hostname": "home.hpc.local",
+  "model_inference": "not_run",
+  "python_submit": "3.12.15 (main, Oct  1 2026, 00:00:00) [GCC 14.3.1 20251022 (Red Hat 14.3.1-4)]",
+  "python_worker": "3.12.15 (main, Oct  1 2026, 00:00:00) [GCC 14.3.1 20251022 (Red Hat 14.3.1-4)]",
+  "route_id": "bgmat_water",
+  "run_id": "local_bgmat_20261022",
+  "schema_version": 1,
+  "scientific_validation": "not_run",
+  "script_sha256": "f4ce17d74d62d8cd9cedde1ba72716615fa9fe95afb4fbdb6fcb8ac63cd5fff1",
+  "slurm_cpus_per_task": null,
+  "slurm_job_id": null,
+  "status": "completed",
+  "summary": {
+    "candidates": 2,
+    "qa_pass": 1,
+    "samples": 3
+  },
+  "synthetic": true
+}

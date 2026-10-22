@@ -1,0 +1,9 @@
+{
+  "synthetic": true,
+  "provenance": "Gen_X hand-authored synthetic water-bead coordinate fixture for software testing; O_bead denotes one coarse-grained water bead, not all-atom water; not bgmat output or a Boltzmann ensemble",
+  "samples": [
+    {"id": "beads_separated_demo", "species": ["O_bead", "O_bead", "O_bead"], "cell_A": [10, 10, 10], "positions_A": [[1, 1, 1], [4, 4, 4], [7, 7, 7]]},
+    {"id": "beads_periodic_overlap_demo", "species": ["O_bead", "O_bead"], "cell_A": [10, 10, 10], "positions_A": [[0.1, 1, 1], [9.9, 1, 1]]},
+    {"id": "beads_outside_cell_demo", "species": ["O_bead", "O_bead"], "cell_A": [10, 10, 10], "positions_A": [[-1, 1, 1], [4, 4, 4]]}
+  ]
+}

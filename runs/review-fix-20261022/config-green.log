@@ -1,0 +1,8 @@
+test_config_snapshot_uses_the_exact_validated_bytes (test_smoke.SmokeTests.test_config_snapshot_uses_the_exact_validated_bytes) ... ok
+test_modified_resolved_config_is_refused_before_qa (test_smoke.SmokeTests.test_modified_resolved_config_is_refused_before_qa) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.138s
+
+OK
+{"status": "completed", "run_dir": "/home/qiuyong/bza/H2O/Gen_X/tests/smoke test gyds3hur/output with spaces/test_run", "summary": {"samples": 2, "qa_pass": 1, "candidates": 1}}

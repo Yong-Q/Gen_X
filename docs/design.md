@@ -19,7 +19,7 @@
 2. 配置为版本化 JSON，含来源、执行状态、上游入口、模型/数据前置条件。
 3. Bash 本地 smoke 验证配置和路由，产生唯一 run ID、manifest 和日志。
 4. Bash Slurm 入口支持 dry-run，默认 CPU smoke（单 CPU、短 walltime）；不申请 GPU，不运行训练。
-5. 实际提交一个 CPU smoke（资源可用时），用 sacct/squeue 和落盘结果确认完成。
+5. 实际提交短 CPU smoke（资源可用时，修复后必要时重新验证），用 sacct/squeue 和落盘结果确认完成。
 6. 反馈回环仅运行数据流示范：明确标记的 synthetic fixtures → QA → candidates.jsonl。队列不自动触发 DFT、势重训或生成器训练。
 7. 科学运行、依赖安装、真实权重/数据下载与 GPU 推理单列为后续里程碑。
 

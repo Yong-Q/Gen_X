@@ -1,0 +1,20 @@
+test_config_snapshot_uses_the_exact_validated_bytes (test_smoke.SmokeTests.test_config_snapshot_uses_the_exact_validated_bytes) ... ok
+test_direct_worker_refuses_resolved_path_outside_workspace (test_smoke.SmokeTests.test_direct_worker_refuses_resolved_path_outside_workspace) ... ok
+test_dry_run_validates_but_creates_no_results (test_smoke.SmokeTests.test_dry_run_validates_but_creates_no_results) ... ok
+test_duplicate_run_refused_without_altering_results (test_smoke.SmokeTests.test_duplicate_run_refused_without_altering_results) ... ok
+test_missing_required_metadata_rejected (test_smoke.SmokeTests.test_missing_required_metadata_rejected) ... ok
+test_modified_resolved_config_is_refused_before_qa (test_smoke.SmokeTests.test_modified_resolved_config_is_refused_before_qa) ... ok
+test_paths_with_spaces_and_periodic_qa_are_preserved (test_smoke.SmokeTests.test_paths_with_spaces_and_periodic_qa_are_preserved) ... ok
+test_run_id_traversal_rejected (test_smoke.SmokeTests.test_run_id_traversal_rejected) ... ok
+test_sbatch_failure_propagates_and_records_failure (test_smoke.SmokeTests.test_sbatch_failure_propagates_and_records_failure) ... ok
+test_scientific_execution_mode_rejected (test_smoke.SmokeTests.test_scientific_execution_mode_rejected) ... ok
+test_slurm_dry_run_has_only_small_cpu_request (test_smoke.SmokeTests.test_slurm_dry_run_has_only_small_cpu_request) ... ok
+test_slurm_preserves_logs_and_disables_requeue (test_smoke.SmokeTests.test_slurm_preserves_logs_and_disables_requeue) ... ok
+test_unknown_route_rejected_before_run_creation (test_smoke.SmokeTests.test_unknown_route_rejected_before_run_creation) ... ok
+test_worker_subprocess_failure_cannot_be_success (test_smoke.SmokeTests.test_worker_subprocess_failure_cannot_be_success) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.844s
+
+OK
+{"status": "completed", "run_dir": "/home/qiuyong/bza/H2O/Gen_X/tests/smoke test 11rrumu4/output with spaces/test_run", "summary": {"samples": 2, "qa_pass": 1, "candidates": 1}}

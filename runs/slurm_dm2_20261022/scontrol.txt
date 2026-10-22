@@ -1,0 +1,30 @@
+JobId=96379 JobName=genx_cpu_smoke
+   UserId=qiuyong(1010) GroupId=normal(1023) MCS_label=N/A
+   Priority=1 Nice=0 Account=(null) QOS=normal
+   JobState=COMPLETED Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:05 TimeLimit=00:02:00 TimeMin=N/A
+   SubmitTime=2026-10-22T15:50:19 EligibleTime=2026-10-22T15:50:19
+   AccrueTime=2026-10-22T15:50:19
+   StartTime=2026-10-22T15:50:33 EndTime=2026-10-22T15:50:38 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-10-22T15:50:33 Scheduler=Backfill
+   Partition=debug AllocNode:Sid=home:2640022
+   ReqNodeList=(null) ExcNodeList=(null)
+   NodeList=node04
+   BatchHost=node04
+   NumNodes=1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   ReqTRES=cpu=1,mem=128M,node=1,billing=1
+   AllocTRES=cpu=1,mem=128M,node=1,billing=1
+   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryNode=128M MinTmpDiskNode=0
+   Features=(null) DelayBoot=00:00:00
+   OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null)
+   Command=/home/qiuyong/bza/H2O/Gen_X/scripts/slurm_smoke.sh
+   SubmitLine=sbatch --parsable --partition=debug --job-name=genx_cpu_smoke --nodes=1 --ntasks=1 --cpus-per-task=1 --mem=128M --time=00:02:00 --export=NONE --chdir=/home/qiuyong/bza/H2O/Gen_X --output=/home/qiuyong/bza/H2O/Gen_X/runs/slurm_dm2_20261022/slurm-%j.out --error=/home/qiuyong/bza/H2O/Gen_X/runs/slurm_dm2_20261022/slurm-%j.err /home/qiuyong/bza/H2O/Gen_X/scripts/slurm_smoke.sh /usr/bin/python3 /home/qiuyong/bza/H2O/Gen_X/scripts/smoke.py /home/qiuyong/bza/H2O/Gen_X/runs/slurm_dm2_20261022
+   WorkDir=/home/qiuyong/bza/H2O/Gen_X
+   Comment=stdout=/home/qiuyong/bza/H2O/Gen_X/runs/slurm_dm2_20261022/slurm-96379.out
+   StdErr=/home/qiuyong/bza/H2O/Gen_X/runs/slurm_dm2_20261022/slurm-96379.err
+   StdIn=/dev/null
+   StdOut=/home/qiuyong/bza/H2O/Gen_X/runs/slurm_dm2_20261022/slurm-96379.out
+   TresPerTask=cpu=1
+

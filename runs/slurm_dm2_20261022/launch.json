@@ -1,0 +1,16 @@
+{
+  "config_sha256": "c81da8dc46434fb1bc5675cce14de2ff1c4dc99cddb3bec60090824424097309",
+  "config_source": "/home/qiuyong/bza/H2O/Gen_X/configs/dm2_smoke.json",
+  "created_utc": "2026-10-22T07:50:19.839869+00:00",
+  "execution": "submit",
+  "fixture_sha256": "fd5c3e604d0140a71696db58ab12adec1d0cb120dccab2fb7f2b5da3ee47473c",
+  "fixture_source": "/home/qiuyong/bza/H2O/Gen_X/examples/dm2_synthetic.json",
+  "model_inference": "not_run",
+  "python_submit": "3.12.15 (main, Oct  1 2026, 00:00:00) [GCC 14.3.1 20251022 (Red Hat 14.3.1-4)]",
+  "route_id": "dm2_amorphous",
+  "run_id": "slurm_dm2_20261022",
+  "schema_version": 1,
+  "scientific_validation": "not_run",
+  "script_sha256": "f4ce17d74d62d8cd9cedde1ba72716615fa9fe95afb4fbdb6fcb8ac63cd5fff1",
+  "synthetic": true
+}

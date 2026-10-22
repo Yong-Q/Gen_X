@@ -1,0 +1,18 @@
+[
+  {
+    "file": "literature_survey.pdf",
+    "pages": 6,
+    "text_chars": 9488,
+    "links": 62,
+    "out_of_page": [],
+    "sha256": "279d6bafd9a17531ca88f75a93ae81a2db9a919fa071fc080e79dd8e3cf66e22"
+  },
+  {
+    "file": "technical_roadmap.pdf",
+    "pages": 7,
+    "text_chars": 16833,
+    "links": 54,
+    "out_of_page": [],
+    "sha256": "30b19c73c1ad0a4594a4ade4b2a2e7a49a378dd2cf00ebd4ea38684cd829be90"
+  }
+]

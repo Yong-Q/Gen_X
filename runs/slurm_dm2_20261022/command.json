@@ -1,0 +1,22 @@
+{
+  "argv": [
+    "sbatch",
+    "--parsable",
+    "--partition=debug",
+    "--job-name=genx_cpu_smoke",
+    "--nodes=1",
+    "--ntasks=1",
+    "--cpus-per-task=1",
+    "--mem=128M",
+    "--time=00:02:00",
+    "--export=NONE",
+    "--chdir=/home/qiuyong/bza/H2O/Gen_X",
+    "--output=/home/qiuyong/bza/H2O/Gen_X/runs/slurm_dm2_20261022/slurm-%j.out",
+    "--error=/home/qiuyong/bza/H2O/Gen_X/runs/slurm_dm2_20261022/slurm-%j.err",
+    "/home/qiuyong/bza/H2O/Gen_X/scripts/slurm_smoke.sh",
+    "/usr/bin/python3",
+    "/home/qiuyong/bza/H2O/Gen_X/scripts/smoke.py",
+    "/home/qiuyong/bza/H2O/Gen_X/runs/slurm_dm2_20261022"
+  ],
+  "shell": false
+}
