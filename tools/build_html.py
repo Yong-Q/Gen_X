@@ -22,6 +22,7 @@ SITE = ROOT / "site"
 PAGES = [
     ("README.md", "index.html", "项目概览", "从构型分布到结构系综", "目标、当前边界与阅读入口"),
     ("docs/tutorial.md", "tutorial.html", "使用教程", "从配置到结果", "启动、运行、检查与反馈"),
+    ("docs/research_program.md", "research.html", "研究方案", "从工程示例到独立研究", "研究假设、对照实验与停止标准"),
     ("docs/real_generation_results.md", "generation.html", "生成示例", "单珠水冰：真实预训练采样", "独立示例、生成构型与复跑步骤"),
     ("docs/literature_survey.md", "literature.html", "文献调研", "已有方法与证据边界", "水、非晶与聚合物的分布学习"),
     ("docs/technical_roadmap.md", "roadmap.html", "技术路线", "从可运行到可验证", "模型选择、科学验收与两条反馈回环"),
@@ -130,6 +131,8 @@ def pdf_panel():
                 group=[survey,roadmap]
                 example=survey.parent/'bgmat_cpu_generation.pdf'
                 if example.is_file(): group.append(example)
+                research=survey.parent/'research_program.pdf'
+                if research.is_file(): group.append(research)
                 snapshots.append(group)
     paths = max(snapshots, key=lambda group: max(path.stat().st_mtime_ns for path in group)) if snapshots else []
     if paths:

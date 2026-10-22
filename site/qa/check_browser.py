@@ -63,7 +63,7 @@ try:
     checks = []
     for width, height in [(1440, 1000), (390, 844)]:
         command("browsingContext.setViewport", {"context": context, "viewport": {"width": width, "height": height}, "devicePixelRatio": 1})
-        for name in ["index", "tutorial", "generation", "literature", "roadmap", "environment", "evidence"]:
+        for name in sorted(page.stem for page in SITE.glob('*.html')):
             command("browsingContext.navigate", {"context": context, "url": (SITE / (name + ".html")).as_uri(), "wait": "complete"})
             data = json.loads(evaluate("JSON.stringify({width:innerWidth,documentWidth:document.documentElement.scrollWidth,title:document.title,h1:document.querySelectorAll('h1').length,active:document.querySelector('.primary-nav [aria-current=page]').getAttribute('href'),copyButtons:document.querySelectorAll('.copy-button').length,math:document.querySelectorAll('math').length,tableWrappers:document.querySelectorAll('.table-scroll').length,navHidden:getComputedStyle(document.getElementById('sidebar')).display==='none'})", context))
             assert data["documentWidth"] <= width, (name, width, data)
@@ -89,7 +89,7 @@ try:
               "checked_utc": datetime.now(timezone.utc).isoformat(), "url_mode": "file://",
               "checks": checks, "console_errors": errors,
               "interactions": ["heading search returns matching links", "mobile menu opens and Escape closes it", "copy button handler runs without errors; clipboard permission may require manual fallback"],
-              "scope": "Seven pages at desktop and mobile widths; no page overflow, active nav, MathML presence, local JS, menu/search/copy handler checks. Not scientific validation."}
+              "scope": "All current HTML pages at desktop and mobile widths; no page overflow, active nav, MathML presence, local JS, menu/search/copy handler checks. Not scientific validation."}
     (QA / "browser-validation.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
     print(json.dumps({"status": "passed", "page_viewport_checks": len(checks), "console_errors": len(errors), "report_directory": str(QA)}))
 finally:

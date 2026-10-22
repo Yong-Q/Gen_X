@@ -5,5 +5,6 @@
 | 项目 | 范围 | 入口 |
 |---|---|---|
 | water_ice_bgmat | 使用作者预训练可逆流生成216粒子的单珠水冰构型 | [说明](water_ice_bgmat/README.md) |
+| amorphous_generation | 非晶结构分布的少数据高精度迁移；方案阶段 | [说明](amorphous_generation/README.md) |
 
 后续可以增加非晶、全原子水或聚合物课题；每个课题分别定义目标分布和验收标准，避免一个示例的结果被推广为整个仓库的能力。

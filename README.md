@@ -17,6 +17,7 @@
 
 ## 课题入口
 
+- [非晶构型概率分布迁移：研究方案](projects/amorphous_generation/README.md)
 - [单珠水冰：预训练 bgmat 生成闭环](projects/water_ice_bgmat/README.md)
 - 非晶、全原子水与聚合物的后续路线见[技术路线](docs/technical_roadmap.md)。
 

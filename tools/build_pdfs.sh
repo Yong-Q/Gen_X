@@ -45,4 +45,9 @@ if [[ -f "$repo_root/docs/real_generation_results.md" ]]; then
     -M 'title=bgmat单珠水冰：真实生成示例与复跑教程' \
     -o "$out_dir/bgmat_cpu_generation.pdf" >"$out_dir/generation_build.log" 2>&1
 fi
+if [[ -f "$repo_root/docs/research_program.md" ]]; then
+  pandoc "$repo_root/docs/research_program.md" "${common[@]}" \
+    -M 'title=Gen_X研究方案：非晶构型的概率分布迁移' \
+    -o "$out_dir/research_program.pdf" >"$out_dir/research_build.log" 2>&1
+fi
 printf '%s\n' "$out_dir/literature_survey.pdf" "$out_dir/technical_roadmap.pdf"

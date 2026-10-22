@@ -1,20 +1,21 @@
 {
   "status": "passed",
-  "html_pages": 7,
-  "checked_local_links": 266,
+  "html_pages": 8,
+  "checked_local_links": 315,
   "mathml_elements": 20,
   "external_runtime_assets": 0,
   "errors": [],
   "scope": "Static local target/fragment, duplicate ID, MathML and external asset checks; not a browser test",
   "sources_sha256": {
-    "README.md": "e1f55301ed1a6e18e09c7a08a4e5b28cf47b83d2ea67cf3c83eb95c09237fb62",
+    "README.md": "089924df606b7e40c21198cff3ac5432bfc0dfbb9c24b9c082c1542f56192faa",
     "docs/tutorial.md": "2b890ee568612f381fe61e9eb317600c54de2743d9ed12be8b540590bf497515",
+    "docs/research_program.md": "d8d396ced9f60df5e9c9c2b2cbffcb3204529c2e93a1e0ed5eadd3dc32e5b046",
     "docs/real_generation_results.md": "cab9971ff61eb1f14d62c2d3d2f31224fca57f358e41dd923670649ed2856935",
     "docs/literature_survey.md": "22605ae0e005fdd1b18c97aa263a799257a58bfc9ec37c88b2a4d038550f3fbb",
     "docs/technical_roadmap.md": "f673d26f3538855d9c9c3048ad05e5de7a829e7e8f420dd3ad9b9ebae0adc06b",
     "docs/potentials_and_environment.md": "2221ad5006c45486150f0737e59c15fb37b17a43849dce4af628fbe71ce04e9d",
     "docs/smoke_results.md": "fc507ed775e06dc09f85856ed6e6b7f90425e19a4057cdff7344f2e8f74ed02f"
   },
-  "built_utc": "2026-10-22T09:03:57.887621+00:00",
-  "builder_sha256": "b883afdbdbdd606a6d0f358d582b567eb0408b14e21bf61ce019c27889c3c67e"
+  "built_utc": "2026-10-22T09:27:27.914778+00:00",
+  "builder_sha256": "c438fb64631db520cff27067dda080d2802fcf40abb5bacb1633fe4bc0240e19"
 }
