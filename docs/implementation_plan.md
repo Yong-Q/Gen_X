@@ -48,8 +48,8 @@ Own scripts/, configs/, tests/, examples/, runs/ and docs/smoke_results.md.
 
 - [x] Review scientific claims, execution boundary, quoting/no-overwrite behavior and Slurm correctness.
 - [x] Address material findings and rerun affected checks.
-- [ ] Commit only task-owned sources, PDFs and small run evidence; push to user-authorized repository.
-- [ ] Verify remote commit and report links plus remaining scientific milestones.
+- [x] Commit only task-owned sources, PDFs and small run evidence; push to user-authorized repository.
+- [x] Verify remote commit and report links plus remaining scientific milestones.
 
 ## HTML documentation extension
 
